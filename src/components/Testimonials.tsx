@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import Image from 'next/image'
 import { Star, Quote } from 'lucide-react'
 
 const testimonials = [
@@ -71,22 +72,24 @@ export default function Testimonials() {
               <Quote className="w-8 h-8 text-primary/30 mb-4" />
 
               <p className="text-gray mb-6 leading-relaxed line-clamp-4">
-                "{testimonial.content}"
+                &quot;{testimonial.content}&quot;
               </p>
 
-              <div className="flex items-center gap-4 pt-4 border-t border-white/10">
-                <img
-                  src={testimonial.image}
-                  alt={testimonial.name}
-                  className="w-14 h-14 rounded-full object-cover border-2 border-primary"
-                />
-                <div>
-                  <div className="font-bold">{testimonial.name}</div>
-                  <div className="text-sm text-gray">
-                    {testimonial.role}, <span className="text-primary">{testimonial.company}</span>
+                <div className="flex items-center gap-4 pt-4 border-t border-white/10">
+                  <Image
+                    src={testimonial.image}
+                    alt={testimonial.name}
+                    className="w-14 h-14 rounded-full object-cover border-2 border-primary"
+                    width={140}
+                    height={140}
+                  />
+                  <div>
+                    <div className="font-bold">{testimonial.name}</div>
+                    <div className="text-sm text-gray">
+                      {testimonial.role}, <span className="text-primary">{testimonial.company}</span>
+                    </div>
                   </div>
                 </div>
-              </div>
             </div>
           ))}
         </div>

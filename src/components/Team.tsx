@@ -1,6 +1,7 @@
 'use client'
 
 import { Mail, Phone, Linkedin, Twitter } from 'lucide-react'
+import Image from 'next/image'
 
 const teamMembers = [
   {
@@ -97,13 +98,14 @@ export default function Team() {
               style={{ animationDelay: `${index * 0.1}s` }}
             >
               <div className="relative h-64 overflow-hidden">
-                <img
-                  src={member.image}
-                  alt={member.name}
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-darker via-transparent to-transparent" />
-                <div className="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity" />
+                 <Image
+                   src={member.image}
+                   alt={member.name}
+                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                   fill
+                 />
+                 <div className="absolute inset-0 bg-gradient-to-t from-darker via-transparent to-transparent" />
+                 <div className="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity" />
               </div>
 
               <div className="p-5">

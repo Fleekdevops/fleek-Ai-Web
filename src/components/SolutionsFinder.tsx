@@ -88,9 +88,9 @@ export default function SolutionsFinder() {
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black mt-3 mb-4">
             Find Your <span className="gradient-text">Perfect AI Solution</span>
           </h2>
-          <p className="text-gray text-lg">
-            Answer a few questions and we'll recommend the best AI service for your needs
-          </p>
+            <p className="text-gray text-lg">
+              Answer a few questions and we&#39;ll recommend the best AI service for your needs
+            </p>
         </div>
 
         <div

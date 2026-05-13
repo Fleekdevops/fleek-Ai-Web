@@ -75,21 +75,21 @@ export default function Hero() {
                     <span className="text-gray text-sm ml-2">freezer-ai.js</span>
                   </div>
                   
-                  <div className="space-y-4 font-mono text-sm">
-                    <div className="flex items-center gap-2">
-                      <Brain className="text-accent" size={20} />
-                      <span className="text-gray">// AI Model Active</span>
+                    <div className="space-y-4 font-mono text-sm">
+                      <div className="flex items-center gap-2">
+                        <Brain className="text-accent" size={20} />
+                        <span className="text-gray">{'// AI Model Active'}</span>
+                      </div>
+                      <div className="h-px bg-white/10" />
+                      <div className="text-green-400">{'const response = await freez'}</div>
+                      <div className="text-primary pl-4">{'.analyze(userInput)'}</div>
+                      <div className="text-primary pl-4">{'.predict(trends)'}</div>
+                      <div className="text-primary pl-4">{'.automate(process)'}</div>
+                      <div className="text-accent pl-4">{'.execute();'}</div>
+                      <div className="h-px bg-white/10" />
+                      <div className="text-green-400">{'// Accuracy: 98.7%'}</div>
+                      <div className="text-secondary">{'// Latency: 45ms'}</div>
                     </div>
-                    <div className="h-px bg-white/10" />
-                    <div className="text-green-400">const response = await freez</div>
-                    <div className="text-primary pl-4">.analyze(userInput)</div>
-                    <div className="text-primary pl-4">.predict(trends)</div>
-                    <div className="text-primary pl-4">.automate(process)</div>
-                    <div className="text-accent pl-4">.execute();</div>
-                    <div className="h-px bg-white/10" />
-                    <div className="text-green-400">// Accuracy: 98.7%</div>
-                    <div className="text-secondary">// Latency: 45ms</div>
-                  </div>
 
                   <div className="mt-6 p-4 bg-primary/10 rounded-xl">
                     <div className="flex items-center gap-3 mb-2">

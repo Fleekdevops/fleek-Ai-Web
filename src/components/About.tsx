@@ -1,6 +1,7 @@
 'use client'
 
 import Link from 'next/link'
+import Image from 'next/image'
 import { Bot, Cpu, Sparkles, ArrowRight, Globe, Shield, Users, Zap } from 'lucide-react'
 
 const features = [
@@ -21,7 +22,7 @@ export default function About() {
             <div className="relative">
               <div className="absolute inset-0 gradient-bg rounded-3xl blur-2xl opacity-20" />
               <div className="relative card-bg rounded-3xl overflow-hidden border border-white/10">
-                <img
+                <Image
                   src="https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&q=80"
                   alt="AI Technology"
                   className="w-full h-96 object-cover"

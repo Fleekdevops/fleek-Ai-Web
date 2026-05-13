@@ -1,6 +1,7 @@
 'use client'
 
 import Link from 'next/link'
+import Image from 'next/image'
 import { ArrowRight, TrendingUp, Users, Zap, DollarSign } from 'lucide-react'
 
 const caseStudies = [
@@ -71,9 +72,9 @@ export default function CaseStudies() {
           <h2 className="text-4xl sm:text-5xl lg:text-6xl font-black mt-3 mb-4">
             Success <span className="gradient-text">Stories</span>
           </h2>
-          <p className="text-gray text-lg max-w-2xl mx-auto">
-            See how we've helped businesses transform with AI-powered solutions.
-          </p>
+            <p className="text-gray text-lg max-w-2xl mx-auto">
+              See how we&#39;ve helped businesses transform with AI-powered solutions.
+            </p>
         </div>
 
         <div className="grid md:grid-cols-2 gap-8">
@@ -84,10 +85,11 @@ export default function CaseStudies() {
               style={{ animationDelay: `${index * 0.1}s` }}
             >
               <div className="relative h-48 overflow-hidden">
-                <img
+                <Image
                   src={study.image}
                   alt={study.title}
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                  fill
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-darker/90 to-transparent" />
                 <div className="absolute bottom-4 left-4">

@@ -95,9 +95,9 @@ export default function Contact() {
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black mt-3 mb-4">
             Schedule an <span className="gradient-text">AI Consultation</span>
           </h2>
-          <p className="text-gray text-lg max-w-2xl mx-auto">
-            Let's discuss how AI can transform your business. Our experts are ready to help you build intelligent solutions.
-          </p>
+            <p className="text-gray text-lg max-w-2xl mx-auto">
+              Let&#39;s discuss how AI can transform your business. Our experts are ready to help you build intelligent solutions.
+            </p>
         </div>
 
         <div className="grid lg:grid-cols-2 gap-12">
@@ -273,9 +273,17 @@ export default function Contact() {
                   </div>
                   <div>
                     <div className="font-semibold mb-1">Email</div>
-                    <a href="mailto:Fleektechinc@gmail.com" className="text-gray hover:text-primary transition-colors">
-                      Fleektechinc@gmail.com
-                    </a>
+                    <div className="space-y-2">
+                      <a href="mailto:FleekTechInc@proton.me" className="text-gray hover:text-primary transition-colors">
+                        FleekTechInc@proton.me
+                      </a>
+                      <a href="mailto:Fleektechinc@gmail.com" className="text-gray hover:text-primary transition-colors">
+                        Fleektechinc@gmail.com
+                      </a>
+                      <a href="mailto:Fleektechinc@outlook.com" className="text-gray hover:text-primary transition-colors">
+                        Fleektechinc@outlook.com
+                      </a>
+                    </div>
                   </div>
                 </div>
 

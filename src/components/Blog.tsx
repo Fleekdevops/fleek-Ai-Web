@@ -1,6 +1,7 @@
 'use client'
 
 import Link from 'next/link'
+import Image from 'next/image'
 import { ArrowRight, Clock, User } from 'lucide-react'
 
 const blogPosts = [
@@ -55,10 +56,11 @@ export default function Blog() {
               style={{ animationDelay: `${index * 0.1}s` }}
             >
               <div className="relative h-48 overflow-hidden">
-                <img
+                <Image
                   src={post.image}
                   alt={post.title}
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                  fill
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-darker/80 to-transparent" />
                 <span className="absolute top-4 left-4 px-3 py-1 rounded-full bg-primary/80 text-white text-xs font-semibold">

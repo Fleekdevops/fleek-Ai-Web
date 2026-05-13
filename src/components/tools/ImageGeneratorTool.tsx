@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import Image from 'next/image'
 import { Send, Loader2, Download, Sparkles } from 'lucide-react'
 
 const sampleImages = [
@@ -61,24 +62,25 @@ export default function ImageGeneratorTool() {
         />
 
         <div className="flex-1 bg-darker rounded-xl overflow-hidden flex items-center justify-center">
-          {generatedImage ? (
-            <div className="relative w-full h-full">
-              <img
-                src={generatedImage}
-                alt="Generated"
-                className="w-full h-full object-cover"
-              />
-              <button className="absolute bottom-3 right-3 px-3 py-2 rounded-lg bg-darker/80 text-white text-sm flex items-center gap-2 hover:bg-darker transition-colors">
-                <Download size={16} />
-                Download
-              </button>
-            </div>
-          ) : (
-            <div className="text-center text-gray">
-              <div className="text-4xl mb-2">🎨</div>
-              <p className="text-sm">Generated images will appear here</p>
-            </div>
-          )}
+           {generatedImage ? (
+             <div className="relative w-full h-full">
+               <Image
+                 src={generatedImage}
+                 alt="Generated"
+                 className="w-full h-full object-cover"
+                 fill
+               />
+               <button className="absolute bottom-3 right-3 px-3 py-2 rounded-lg bg-darker/80 text-white text-sm flex items-center gap-2 hover:bg-darker transition-colors">
+                 <Download size={16} />
+                 Download
+               </button>
+             </div>
+           ) : (
+             <div className="text-center text-gray">
+               <div className="text-4xl mb-2">🎨</div>
+               <p className="text-sm">Generated images will appear here</p>
+             </div>
+           )}
         </div>
       </div>
 
