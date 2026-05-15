@@ -2,7 +2,8 @@
 
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
-import { Menu, X, Bot, Phone, Mail } from 'lucide-react'
+import Image from 'next/image'
+import { Menu, X, Phone, Mail } from 'lucide-react'
 
 const navLinks = [
   { href: '#home', label: 'Home' },
@@ -33,12 +34,12 @@ export default function Header() {
     }`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between">
-          <Link href="/" className="flex items-center gap-3 group">
-            <div className="w-12 h-12 rounded-xl gradient-bg flex items-center justify-center transform group-hover:rotate-12 transition-transform duration-300">
-              <Bot className="w-7 h-7 text-white" />
-            </div>
-            <span className="text-2xl font-black gradient-text">FleekTech AI Solutions</span>
-          </Link>
+           <Link href="/" className="flex items-center gap-3 group">
+              <div className="w-12 h-12 rounded-xl gradient-bg flex items-center justify-center transform group-hover:rotate-12 transition-transform duration-300">
+                <Image src="/fleek-logo.jpeg" alt="FleekTech Logo" width={48} height={48} />
+              </div>
+             <span className="text-2xl font-black gradient-text">FleekTech AI Solutions</span>
+           </Link>
 
           <nav className="hidden lg:flex items-center gap-8">
             {navLinks.map((link) => (

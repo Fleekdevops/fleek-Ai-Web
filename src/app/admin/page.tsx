@@ -53,7 +53,12 @@ export default function AdminDashboard() {
   const [activeTab, setActiveTab] = useState('contacts')
   const [contacts, setContacts] = useState<Contact[]>([])
   const [blogPosts, setBlogPosts] = useState<BlogPost[]>([])
-  const [analytics, setAnalytics] = useState<Analytics | null>(null)
+  const [analytics, setAnalytics] = useState<Analytics>({
+    consultations: 0,
+    blogPosts: 0,
+    contacts: 0,
+    visitors: 0,
+  })
   const [selectedContact, setSelectedContact] = useState<Contact | null>(null)
   const [chatMessages, setChatMessages] = useState<{role: string, content: string}[]>([])
   const [chatInput, setChatInput] = useState('')
@@ -94,7 +99,7 @@ export default function AdminDashboard() {
       }
       if (analyticsRes.ok) {
         const data = await analyticsRes.json()
-        setAnalytics(data.data)
+        setAnalytics(data.data || { consultations: 0, blogPosts: 0, contacts: 0, visitors: 0 })
       }
     } catch (error) {
       console.error('Error fetching data:', error)

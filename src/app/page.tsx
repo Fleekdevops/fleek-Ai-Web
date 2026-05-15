@@ -14,6 +14,7 @@ import Team from '@/components/Team'
 import Testimonials from '@/components/Testimonials'
 import Blog from '@/components/Blog'
 import Contact from '@/components/Contact'
+import PaybillCard from '@/components/PaybillCard'
 import Footer from '@/components/Footer'
 import AIChatbot from '@/components/AIChatbot'
 import BackToTop from '@/components/BackToTop'
@@ -43,6 +44,7 @@ export default function Home() {
         <Team />
         <Testimonials />
         <Blog />
+        <PaybillCard />
         <Contact />
         <Footer />
         <AIChatbot />

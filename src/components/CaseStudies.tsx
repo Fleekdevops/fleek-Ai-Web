@@ -89,7 +89,8 @@ export default function CaseStudies() {
                   src={study.image}
                   alt={study.title}
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                  fill
+                  width={600}
+                  height={400}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-darker/90 to-transparent" />
                 <div className="absolute bottom-4 left-4">

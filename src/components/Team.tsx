@@ -102,7 +102,8 @@ export default function Team() {
                    src={member.image}
                    alt={member.name}
                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                   fill
+                   width={400}
+                   height={256}
                  />
                  <div className="absolute inset-0 bg-gradient-to-t from-darker via-transparent to-transparent" />
                  <div className="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity" />

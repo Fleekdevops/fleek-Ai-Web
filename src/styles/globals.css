@@ -296,3 +296,21 @@ img {
   50% { background-position: 100% 50%; }
   100% { background-position: 0% 50%; }
 }
+
+@keyframes slide-horizontal {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+.animate-slide-horizontal {
+  animation: slide-horizontal 8s ease-in-out infinite alternate;
+}
+
+@keyframes slide-horizontal-end-to-end {
+  0% { transform: translateX(100%); }
+  100% { transform: translateX(-100%); }
+}
+
+.animate-slide-horizontal-end-to-end {
+  animation: slide-horizontal-end-to-end 6s ease-in-out infinite alternate;
+}

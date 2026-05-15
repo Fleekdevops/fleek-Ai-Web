@@ -1,6 +1,7 @@
 'use client'
 
 import Link from 'next/link'
+import Image from 'next/image'
 import { Bot, Facebook, Twitter, Linkedin, Instagram, Phone, Mail, MapPin } from 'lucide-react'
 
 const RedditIcon = () => (
@@ -41,72 +42,73 @@ const aiServices = [
 
 export default function Footer() {
   return (
-    <footer className="bg-dark pt-20 pb-8 border-t border-white/5">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
-          <div className="lg:col-span-1">
-            <Link href="/" className="flex items-center gap-3 mb-6">
-              <div className="w-12 h-12 rounded-xl gradient-bg flex items-center justify-center">
-                <Bot className="w-7 h-7 text-white" />
-              </div>
-              <span className="text-2xl font-black gradient-text">FleekTech AI Solutions</span>
-            </Link>
-            <p className="text-gray mb-6 leading-relaxed">
-              The Best AI Company in Africa. Located in Nairobi, Kenya. We have the finest team of AI experts, state-of-the-art research lab, and premium AI services to transform your business.
-            </p>
-            <div className="flex gap-3">
-              {[Facebook, Twitter, Linkedin, Instagram].map((Icon, index) => (
-                <a
-                  key={index}
-                  href={[
-                    "https://www.facebook.com/profile.php?id=61580949866406",
-                    "https://x.com/inc_fleek",
-                    "www.linkedin.com/in/fleektech-incorporation-961095384",
-                    "https://www.instagram.com/fleektechinc/"
-                  ][index]}
-                  className="w-10 h-10 rounded-lg bg-white/5 flex items-center justify-center hover:bg-primary transition-colors"
-                >
-                  <Icon width={18} height={18} />
+    <>
+      <footer className="bg-dark pt-20 pb-8 border-t border-white/5">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+            <div className="lg:col-span-1">
+              <Link href="/" className="flex items-center gap-3 mb-6">
+                <div className="w-12 h-12 rounded-xl gradient-bg flex items-center justify-center">
+                  <Bot className="w-7 h-7 text-white" />
+                </div>
+                <span className="text-2xl font-black gradient-text">FleekTech AI Solutions</span>
+              </Link>
+              <p className="text-gray mb-6 leading-relaxed">
+                The Best AI Company in Africa. Located in Nairobi, Kenya. We have the finest team of AI experts, state-of-the-art research lab, and premium AI services to transform your business.
+              </p>
+              <div className="flex gap-3">
+                {[Facebook, Twitter, Linkedin, Instagram].map((Icon, index) => (
+                  <a
+                    key={index}
+                    href={[
+                      "https://www.facebook.com/profile.php?id=61580949866406",
+                      "https://x.com/inc_fleek",
+                      "www.linkedin.com/in/fleektech-incorporation-961095384",
+                      "https://www.instagram.com/fleektechinc/"
+                    ][index]}
+                    className="w-10 h-10 rounded-lg bg-white/5 flex items-center justify-center hover:bg-primary transition-colors"
+                  >
+                    <Icon width={18} height={18} />
+                  </a>
+                ))}
+                {/* Additional social media links */}
+                <a href="https://www.reddit.com/user/According-Use-9007/" className="w-10 h-10 rounded-lg bg-white/5 flex items-center justify-center hover:bg-primary transition-colors">
+                  <RedditIcon />
                 </a>
-              ))}
-              {/* Additional social media links */}
-              <a href="https://www.reddit.com/user/According-Use-9007/" className="w-10 h-10 rounded-lg bg-white/5 flex items-center justify-center hover:bg-primary transition-colors">
-                <RedditIcon />
-              </a>
-              <a href="https://www.tiktok.com/@fleektechinc" className="w-10 h-10 rounded-lg bg-white/5 flex items-center justify-center hover:bg-primary transition-colors">
-                <TikTokIcon />
-              </a>
-              <a href="https://fleektech.co.ke" className="w-10 h-10 rounded-lg bg-white/5 flex items-center justify-center hover:bg-primary transition-colors">
-                <GlobeIcon />
-              </a>
+                <a href="https://www.tiktok.com/@fleektechinc" className="w-10 h-10 rounded-lg bg-white/5 flex items-center justify-center hover:bg-primary transition-colors">
+                  <TikTokIcon />
+                </a>
+                <a href="https://fleektech.co.ke" className="w-10 h-10 rounded-lg bg-white/5 flex items-center justify-center hover:bg-primary transition-colors">
+                  <GlobeIcon />
+                </a>
+              </div>
             </div>
-          </div>
 
-          <div>
-            <h4 className="font-bold text-lg mb-6 text-white">Quick Links</h4>
-            <ul className="space-y-3">
-              {quickLinks.map((link) => (
-                <li key={link.label}>
-                  <Link href={link.href} className="text-gray hover:text-accent transition-colors">
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
+            <div>
+              <h4 className="font-bold text-lg mb-6 text-white">Quick Links</h4>
+              <ul className="space-y-3">
+                {quickLinks.map((link) => (
+                  <li key={link.label}>
+                    <Link href={link.href} className="text-gray hover:text-accent transition-colors">
+                      {link.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
 
-          <div>
-            <h4 className="font-bold text-lg mb-6 text-white">AI Services</h4>
-            <ul className="space-y-3">
-              {aiServices.map((service) => (
-                <li key={service.label}>
-                  <Link href={service.href} className="text-gray hover:text-accent transition-colors">
-                    {service.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
+            <div>
+              <h4 className="font-bold text-lg mb-6 text-white">AI Services</h4>
+              <ul className="space-y-3">
+                {aiServices.map((service) => (
+                  <li key={service.label}>
+                    <Link href={service.href} className="text-gray hover:text-accent transition-colors">
+                      {service.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
 
             <div>
               <h4 className="font-bold text-lg mb-6 text-white">Contact Info</h4>
@@ -115,20 +117,20 @@ export default function Footer() {
                   <MapPin className="w-5 h-5 text-primary shrink-0 mt-0.5" />
                   <span className="text-gray">Nairobi, Kenya</span>
                 </li>
-              <li className="flex items-center gap-3">
-                <Mail className="w-5 h-5 text-primary shrink-0" />
-                <div className="space-y-1">
-                  <a href="mailto:FleekTechInc@proton.me" className="text-gray hover:text-accent transition-colors text-xs">
-                    FleekTechInc@proton.me
-                  </a>
-                  <a href="mailto:Fleektechinc@gmail.com" className="text-gray hover:text-accent transition-colors text-xs">
-                    Fleektechinc@gmail.com
-                  </a>
-                  <a href="mailto:Fleektechinc@outlook.com" className="text-gray hover:text-accent transition-colors text-xs">
-                    Fleektechinc@outlook.com
-                  </a>
-                </div>
-              </li>
+                <li className="flex items-center gap-3">
+                  <Mail className="w-5 h-5 text-primary shrink-0" />
+                  <div className="space-y-1">
+                    <a href="mailto:FleekTechInc@proton.me" className="text-gray hover:text-accent transition-colors text-xs">
+                      FleekTechInc@proton.me
+                    </a>
+                    <a href="mailto:Fleektechinc@gmail.com" className="text-gray hover:text-accent transition-colors text-xs">
+                      Fleektechinc@gmail.com
+                    </a>
+                    <a href="mailto:Fleektechinc@outlook.com" className="text-gray hover:text-accent transition-colors text-xs">
+                      Fleektechinc@outlook.com
+                    </a>
+                  </div>
+                </li>
                 <li className="flex items-center gap-3">
                   <Mail className="w-5 h-5 text-primary shrink-0" />
                   <div className="space-y-2">
@@ -145,23 +147,25 @@ export default function Footer() {
                 </li>
               </ul>
             </div>
-        </div>
+          </div>
 
-        <div className="border-t border-white/5 pt-8">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <div className="text-center md:text-left">
-              <p className="text-gray text-sm">
-                © {new Date().getFullYear()} FleekTech AI Solutions. All rights reserved.
-              </p>
-            </div>
-            <div className="flex items-center gap-6 text-sm">
-              <Link href="#" className="text-gray hover:text-accent transition-colors">Privacy Policy</Link>
-              <Link href="#" className="text-gray hover:text-accent transition-colors">Terms of Service</Link>
-              <Link href="#" className="text-gray hover:text-accent transition-colors">Cookie Policy</Link>
+          <div className="border-t border-white/5 pt-8">
+            <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+              <div className="text-center md:text-left">
+                <p className="text-gray text-sm">
+                  © {new Date().getFullYear()} FleekTech AI Solutions. All rights reserved.
+                </p>
+              </div>
+              <div className="flex items-center gap-6 text-sm">
+                <Link href="#" className="text-gray hover:text-accent transition-colors">Privacy Policy</Link>
+                <Link href="#" className="text-gray hover:text-accent transition-colors">Terms of Service</Link>
+                <Link href="#" className="text-gray hover:text-accent transition-colors">Cookie Policy</Link>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    </footer>
+      </footer>
+      
+    </>
   )
 }

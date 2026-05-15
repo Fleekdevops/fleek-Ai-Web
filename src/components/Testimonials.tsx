@@ -76,13 +76,13 @@ export default function Testimonials() {
               </p>
 
                 <div className="flex items-center gap-4 pt-4 border-t border-white/10">
-                  <Image
-                    src={testimonial.image}
-                    alt={testimonial.name}
-                    className="w-14 h-14 rounded-full object-cover border-2 border-primary"
-                    width={140}
-                    height={140}
-                  />
+                <Image
+                  src={testimonial.image}
+                  alt={testimonial.name}
+                  className="w-14 h-14 rounded-full object-cover border-2 border-primary"
+                  width={56}
+                  height={56}
+                />
                   <div>
                     <div className="font-bold">{testimonial.name}</div>
                     <div className="text-sm text-gray">

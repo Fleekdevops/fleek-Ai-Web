@@ -61,15 +61,16 @@ export default function ImageGeneratorTool() {
           className="w-full h-20 px-4 py-3 rounded-xl bg-white/5 border border-white/10 focus:border-primary outline-none text-sm resize-none"
         />
 
-        <div className="flex-1 bg-darker rounded-xl overflow-hidden flex items-center justify-center">
-           {generatedImage ? (
-             <div className="relative w-full h-full">
-               <Image
-                 src={generatedImage}
-                 alt="Generated"
-                 className="w-full h-full object-cover"
-                 fill
-               />
+          <div className="flex-1 bg-darker rounded-xl overflow-hidden flex items-center justify-center">
+             {generatedImage ? (
+               <div className="relative w-full h-full">
+                 <Image
+                   src={generatedImage}
+                   alt="Generated"
+                   className="w-full h-full object-cover"
+                   width={600}
+                   height={400}
+                 />
                <button className="absolute bottom-3 right-3 px-3 py-2 rounded-lg bg-darker/80 text-white text-sm flex items-center gap-2 hover:bg-darker transition-colors">
                  <Download size={16} />
                  Download

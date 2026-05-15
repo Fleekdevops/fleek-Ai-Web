@@ -60,7 +60,8 @@ export default function Blog() {
                   src={post.image}
                   alt={post.title}
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                  fill
+                  width={600}
+                  height={400}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-darker/80 to-transparent" />
                 <span className="absolute top-4 left-4 px-3 py-1 rounded-full bg-primary/80 text-white text-xs font-semibold">

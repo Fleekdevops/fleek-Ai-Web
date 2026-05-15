@@ -21,11 +21,13 @@ export default function About() {
           <div className="relative animate-fade-in order-2 lg:order-1">
             <div className="relative">
               <div className="absolute inset-0 gradient-bg rounded-3xl blur-2xl opacity-20" />
-              <div className="relative card-bg rounded-3xl overflow-hidden border border-white/10">
+                <div className="relative card-bg rounded-3xl overflow-hidden border border-white/10">
                 <Image
                   src="https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&q=80"
                   alt="AI Technology"
                   className="w-full h-96 object-cover"
+                  width={800}
+                  height={384}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-darker via-transparent to-transparent" />
                 <div className="absolute bottom-6 left-6 right-6">
