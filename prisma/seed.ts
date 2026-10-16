@@ -12,16 +12,6 @@ async function main() {
 
   const teamMembers = [
     {
-      name: 'Carlos K. Koilai',
-      role: 'Chief AI Architect',
-      bio: 'Visionary leader with 15+ years in AI/ML. Pioneering the next generation of intelligent systems.',
-      imageUrl: 'https://i.ibb.co/67HQfKYW/Zingri.jpg',
-      email: 'smartjinxkimani@gmail.com',
-      phone: '+254797132940',
-      linkedin: '#',
-      order: 1,
-    },
-    {
       name: 'Nelson M. Macharia',
       role: 'Chief Executive Officer',
       bio: 'Strategic leader driving AI adoption across enterprises. Expert in scaling AI operations.',
@@ -29,7 +19,7 @@ async function main() {
       email: 'Machariamainanelson@gmail.com',
       phone: '+254111839718',
       linkedin: '#',
-      order: 2,
+      order: 1,
     },
     {
       name: 'Godfrey K. Nduati',
@@ -39,7 +29,7 @@ async function main() {
       email: 'Godfreynduati20@gmail.com',
       phone: '0700059980',
       linkedin: '#',
-      order: 3,
+      order: 2,
     },
     {
       name: 'Eustace Mutua',
@@ -50,7 +40,7 @@ async function main() {
       phone: '+254114882510',
       linkedin: 'https://linkedin.com/in/eustace-muteru',
       twitter: '#',
-      order: 4,
+      order: 3,
     },
     {
       name: 'Josphat Wachira',
@@ -59,7 +49,7 @@ async function main() {
       imageUrl: 'https://i.ibb.co/DyFS4bR/IMG-20251028-WA0011.jpg',
       email: 'josphatwachira33@gmail.com',
       linkedin: '#',
-      order: 5,
+      order: 4,
     },
     {
       name: 'Salome Wairimu',
@@ -68,7 +58,7 @@ async function main() {
       imageUrl: 'https://i.ibb.co/vCVKXpQN/IMG-20251103-WA0029.jpg',
       email: 'khalifasallie55@gmail.com',
       linkedin: '#',
-      order: 6,
+      order: 5,
     },
     {
       name: 'Tracy Risancho',
@@ -76,7 +66,7 @@ async function main() {
       bio: 'Creative AI specialist blending aesthetics with intelligence. Creating beautiful AI experiences.',
       imageUrl: 'https://i.ibb.co/5g29nLns/IMG-20251208-WA0022.jpg',
       linkedin: '#',
-      order: 7,
+      order: 6,
     },
     {
       name: 'Caleb Juma',
@@ -85,7 +75,7 @@ async function main() {
       imageUrl: 'https://i.ibb.co/RkDbJjZL/IMG-20251215-WA0017.jpg',
       email: 'cjuma@example.com',
       linkedin: '#',
-      order: 8,
+      order: 7,
     },
   ]
 

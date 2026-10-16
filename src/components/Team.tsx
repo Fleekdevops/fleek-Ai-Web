@@ -5,15 +5,6 @@ import Image from 'next/image'
 
 const teamMembers = [
   {
-    name: 'Carlos K. Koilai',
-    role: 'Chief AI Architect',
-    bio: 'Visionary leader with 15+ years in AI/ML. Pioneering the next generation of intelligent systems.',
-    image: 'https://i.ibb.co/FbDMQFc2/Whats-App-Image-2026-04-13-at-14-35-05-1.jpg',
-    linkedin: '#',
-    email: 'smartjinxkimani@gmail.com',
-    phone: '+254797132940',
-  },
-  {
     name: 'Nelson M. Macharia',
     role: 'Chief Executive Officer',
     bio: 'Strategic leader driving AI adoption across enterprises. Expert in scaling AI operations.',
