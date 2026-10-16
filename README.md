@@ -100,7 +100,6 @@ OPENAI_API_KEY="your-openai-api-key"
 
 ## Team
 
-- **Carlos K. Koilai** - Chief AI Architect
 - **Nelson M. Macharia** - CEO
 - **Godfrey K. Nduati** - Chief AI Marketing Officer
 - **Eustace Mutua** - Head of Customer Success
