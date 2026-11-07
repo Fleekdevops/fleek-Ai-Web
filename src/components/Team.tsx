@@ -1,87 +1,52 @@
 'use client'
 
-import { Mail, Phone, Linkedin, Twitter } from 'lucide-react'
+import { Mail, Linkedin } from 'lucide-react'
 import Image from 'next/image'
 
 const teamMembers = [
   {
-    name: 'Nelson M. Macharia',
-    role: 'Chief Executive Officer',
-    bio: 'Strategic leader driving AI adoption across enterprises. Expert in scaling AI operations.',
-    image: 'https://i.ibb.co/dXPtBZ7/PHOTO-2026-04-11-08-18-18.jpg',
-    linkedin: '#',
-    email: 'Machariamainanelson@gmail.com',
-    phone: '+254111839718',
-  },
-  {
-    name: 'Godfrey K. Nduati',
-    role: 'Chief AI Marketing Officer',
-    bio: 'AI marketing pioneer. Helping businesses leverage AI for growth and brand building.',
+    name: 'Nelson Maina',
+    role: 'Chief Executive Officer (CEO)',
+    bio: 'Leads Fleektech with a client-first vision—delivering affordable, high-quality digital solutions and dependable partnerships for businesses across Kenya and beyond.',
     image: 'https://i.ibb.co/nq7jr7hn/gody.jpg',
     linkedin: '#',
-    email: 'Godfreynduati20@gmail.com',
-    phone: '0700059980',
+    email: 'nelson@fleektech.co.ke',
   },
   {
-    name: 'Eustace Mutua',
-    role: 'Head of Customer Success',
-    bio: 'Ensuring client success with AI implementations. Building lasting partnerships.',
+    name: 'Carlos Koilai',
+    role: 'CTO & Lead Software Engineer',
+    bio: 'Drives technical excellence across web, mobile, portals, and custom software—building secure, scalable systems tailored to each client’s needs.',
     image: 'https://i.ibb.co/TMHswFdF/Whats-App-Image-2026-04-13-at-16-38-29.jpg',
-    linkedin: 'https://linkedin.com/in/eustace-muteru',
-    email: 'mutuaeustace@gmail.com',
-    twitter: '#',
-    phone: '+254114882510',
+    linkedin: 'https://linkedin.com/in/carlos-koilai',
+    email: 'carlos@fleektech.co.ke',
   },
   {
-    name: 'Josphat Wachira',
-    role: 'AI Marketing Lead',
-    bio: 'Digital marketing expert with deep AI expertise. Driving engagement through intelligent campaigns.',
-    image: 'https://i.ibb.co/DyFS4bR/IMG-20251028-WA0011.jpg',
+    name: 'James Odhiambo',
+    role: 'Managing Director (MD)',
+    bio: 'Oversees operations and delivery, ensuring projects are completed efficiently, on time, and aligned with business goals—no matter how custom the requirements.',
+    image: 'https://i.ibb.co/dXPtBZ7/PHOTO-2026-04-11-08-18-18.jpg',
     linkedin: '#',
-    email: 'josphatwachira33@gmail.com',
-  },
-  {
-    name: 'Salome Wairimu',
-    role: 'Customer Success Manager',
-    bio: 'Client advocate ensuring seamless AI integration. Coordinating teams for optimal delivery.',
-    image: 'https://i.ibb.co/vCVKXpQN/IMG-20251103-WA0029.jpg',
-    linkedin: '#',
-    email: 'khalifasallie55@gmail.com',
-  },
-  {
-    name: 'Tracy Risancho',
-    role: 'AI Design Lead',
-    bio: 'Creative AI specialist blending aesthetics with intelligence. Creating beautiful AI experiences.',
-    image: 'https://i.ibb.co/5g29nLns/IMG-20251208-WA0022.jpg',
-    linkedin: '#',
-  },
-  {
-    name: 'Caleb Juma',
-    role: 'AI Frontend Engineer',
-    bio: 'Building intuitive interfaces for AI applications. Making complex AI accessible to everyone.',
-    image: 'https://i.ibb.co/RkDbJjZL/IMG-20251215-WA0017.jpg',
-    linkedin: '#',
-    email: 'cjuma@example.com',
+    email: 'james@fleektech.co.ke',
   },
 ]
 
 export default function Team() {
   return (
-    <section id="team" className="py-24 relative bg-darker/50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="team" className="py-24 relative bg-darker/50 w-full">
+      <div className="container">
         <div
           className="text-center mb-16 animate-fade-in"
         >
-          <span className="text-primary font-semibold text-sm uppercase tracking-wider">Our Team</span>
+          <span className="text-primary font-semibold text-sm uppercase tracking-wider">Our Leadership</span>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black mt-3 mb-4">
-            Meet Our <span className="gradient-text">AI Experts</span>
+            Meet the <span className="gradient-text">Fleektech Team</span>
           </h2>
           <p className="text-gray text-lg max-w-2xl mx-auto">
-            The brilliant minds behind our AI innovations. Experts dedicated to transforming businesses through intelligent technology.
+            A focused leadership team committed to affordable excellence, fast delivery, and solutions built around your business.
           </p>
         </div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-5xl mx-auto">
           {teamMembers.map((member, index) => (
             <div
               key={member.name}
@@ -110,16 +75,9 @@ export default function Team() {
                     <a
                       href={`mailto:${member.email}`}
                       className="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center hover:bg-primary transition-colors"
+                      aria-label={`Email ${member.name}`}
                     >
                       <Mail size={16} />
-                    </a>
-                  )}
-                  {member.phone && (
-                    <a
-                      href={`tel:${member.phone}`}
-                      className="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center hover:bg-primary transition-colors"
-                    >
-                      <Phone size={16} />
                     </a>
                   )}
                   {member.linkedin && (
@@ -128,18 +86,9 @@ export default function Team() {
                       target="_blank"
                       rel="noopener noreferrer"
                       className="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center hover:bg-primary transition-colors"
+                      aria-label={`${member.name} on LinkedIn`}
                     >
                       <Linkedin size={16} />
-                    </a>
-                  )}
-                  {member.twitter && (
-                    <a
-                      href={member.twitter}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center hover:bg-secondary transition-colors"
-                    >
-                      <Twitter size={16} />
                     </a>
                   )}
                 </div>

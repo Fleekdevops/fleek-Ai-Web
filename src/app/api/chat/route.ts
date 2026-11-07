@@ -1,14 +1,13 @@
 import { NextRequest, NextResponse } from 'next/server'
 
-const systemPrompt = `You are Freezer, an AI assistant created by Fleek AI (a division of Fleek Tech Inc.) in Nairobi, Kenya. You are a knowledgeable AI expert specializing in:
-- AI Chatbots and Conversational AI
-- Machine Learning Solutions
-- Process Automation
-- AI Analytics and Business Intelligence
-- Computer Vision
-- Generative AI
-
-Always be helpful, friendly, and promote Fleek AI's services when relevant. Highlight our expertise in building custom AI solutions for businesses. If users ask about pricing, guide them to schedule a consultation. Be concise but informative.`
+const systemPrompt = `You are the Fleektech assistant for a Nairobi-based IT solutions company.
+Fleektech builds websites, mobile apps, custom software, and business portals, and provides IT support and maintenance.
+Office: Moi Avenue, Stanbank Building, 3rd Floor, Room 10, Nairobi, Kenya.
+Phone: +254 758 175 057.
+Emails: fleektechinc@gmail.com, FleekTechInc@proton.me, Fleektechinc@outlook.com.
+Key value propositions: affordable excellence, time efficiency, skilled team, client-first commitment, and custom solutions at lower prices no matter how custom the project is.
+Pricing guidance (starting points): websites from KES 18,000; business packages around KES 35,000–65,000; apps/software/portals/custom work quoted based on requirements.
+Be helpful, professional, concise, and guide users to request a quote or contact Fleektech when appropriate.`
 
 interface Message {
   role: 'user' | 'assistant'
@@ -17,68 +16,70 @@ interface Message {
 
 const fallbackResponses = [
   {
-    keywords: ['price', 'cost', 'pricing', 'budget', 'how much'],
-    response: "Our AI solutions range from $1,500 to $50,000+ depending on complexity. For a custom quote, I'd recommend scheduling a free consultation at our contact page. We'll discuss your needs and provide a detailed proposal!"
+    keywords: ['price', 'cost', 'pricing', 'budget', 'how much', 'kes'],
+    response: "Fleektech offers affordable, custom pricing. Websites start from KES 18,000, business packages are commonly around KES 35,000–65,000, and apps/software/portals are quoted based on your requirements. Share your project details and we’ll give you a fair quote."
   },
   {
-    keywords: ['chatbot', 'bot', 'conversational'],
-    response: "We specialize in building custom AI chatbots! Whether you need customer support automation, sales bots, or internal assistants, our team can create a solution tailored to your needs. Want to learn more about our chatbot development services?"
+    keywords: ['website', 'web', 'site', 'landing'],
+    response: "We design and develop professional websites that are mobile-friendly, fast, and built to help your business get results. We can also handle updates and maintenance after launch."
   },
   {
-    keywords: ['ml', 'machine learning', 'prediction', 'model'],
-    response: "Machine learning is at the core of what we do! From predictive analytics to custom ML models, we help businesses unlock the power of their data. Our ML solutions have helped clients reduce costs by up to 40%."
+    keywords: ['app', 'mobile', 'android', 'ios'],
+    response: "Fleektech builds custom mobile apps for Android and iOS. Tell us what the app should do, and we’ll recommend an affordable, practical solution."
   },
   {
-    keywords: ['automation', 'automate', 'workflow'],
-    response: "Process automation can transform your business! We help automate repetitive tasks, saving time and reducing errors. Common automations include document processing, data entry, and approval workflows. What's holding your team back currently?"
+    keywords: ['software', 'system', 'portal', 'custom'],
+    response: "We build custom software and business portals tailored to your workflow—no matter how custom the project is. We focus on quality, efficiency, and lower pricing."
   },
   {
-    keywords: ['contact', 'email', 'phone', 'reach', 'talk'],
-    response: "You can reach us at Fleektechinc@gmail.com or call +254 758 175 057. We're based in Nairobi, Kenya, and serve clients globally. Would you like me to help you explore our services while you prepare to reach out?"
+    keywords: ['support', 'maintenance', 'fix', 'repair', 'update'],
+    response: "Yes—Fleektech provides IT support and maintenance, including troubleshooting, updates, fixes, performance checks, and ongoing improvements."
+  },
+  {
+    keywords: ['contact', 'email', 'phone', 'reach', 'talk', 'location', 'office', 'where'],
+    response: "You can reach Fleektech at +254 758 175 057 or email fleektechinc@gmail.com. Our office is at Moi Avenue, Stanbank Building, 3rd Floor, Room 10, Nairobi."
   },
   {
     keywords: ['hello', 'hi', 'hey', 'greetings'],
-    response: "Hello! 👋 I'm Freezer, your AI assistant from Fleek AI. I specialize in helping businesses discover the right AI solutions. What brings you here today? Are you exploring AI for your business or do you have a specific project in mind?"
+    response: "Hi! I’m the Fleektech assistant. I can help with websites, apps, custom software, portals, IT support, and maintenance. What would you like to build or fix?"
   },
   {
     keywords: ['help', 'what can you do', 'services'],
-    response: "I can help you with:\n\n🤖 AI Chatbots\n📊 Machine Learning\n⚡ Process Automation\n👁️ Computer Vision\n📝 Content Generation\n🔮 Predictive Analytics\n\nWhat area interests you most?"
+    response: "Fleektech can help with:\n\n• Website Design & Development\n• Mobile Apps\n• Custom Software\n• Business Portals/Web Apps\n• IT Support & Maintenance\n• Upgrades and improvements\n\nWhat do you need?"
   },
   {
     keywords: ['thank', 'thanks', 'appreciate'],
-    response: "You're welcome! Is there anything else about AI solutions I can help clarify? Feel free to explore our services or reach out to our team for a personalized consultation."
+    response: "You're welcome! If you share your project details, I can help you figure out the best next step and a suitable quote range."
   }
 ]
 
 function getSmartFallback(userMessage: string): string {
   const lowerMessage = userMessage.toLowerCase()
-  
+
   for (const item of fallbackResponses) {
-    if (item.keywords.some(keyword => lowerMessage.includes(keyword))) {
+    if (item.keywords.some((keyword) => lowerMessage.includes(keyword))) {
       return item.response
     }
   }
-  
+
   const defaultResponses = [
-    "That's a great question! At Fleek AI, we specialize in building custom AI solutions tailored to your business needs. Would you like me to explain more about our AI services?",
-    "I'd be happy to help you explore AI solutions for your business. We offer services ranging from chatbots to full machine learning implementations. What specific challenge are you looking to solve?",
-    "Thanks for your interest in AI! Our team at Fleek AI has expertise in areas like natural language processing, predictive analytics, and process automation. How can we help transform your business?",
-    "That's an interesting AI topic! Our experts at Fleek AI can help you implement cutting-edge AI solutions. Would you like to schedule a free consultation to discuss your project?",
-    "Great question! AI is transforming businesses across all industries. Whether you're looking to automate processes, gain insights from data, or improve customer experience, we have solutions. What's your biggest challenge right now?"
+    "Fleektech can help with websites, apps, custom software, portals, IT support, and maintenance. Share a bit about your project and I’ll point you in the right direction.",
+    "We build affordable, custom IT solutions for businesses in Nairobi and beyond. Tell me what you need, and I’ll help you get a quote.",
+    "No matter how custom your project is, Fleektech can help you build it at a fair price. What are you looking to create or improve?",
   ]
-  
+
   return defaultResponses[Math.floor(Math.random() * defaultResponses.length)]
 }
 
 async function chatWithOpenRouter(messages: { role: string; content: string }[]): Promise<string> {
   const apiKey = process.env.OPENROUTER_API_KEY
   const openaiKey = process.env.OPENAI_API_KEY
-  
+
   let endpoint = 'https://openrouter.ai/api/v1/chat/completions'
-  let headers: Record<string, string> = {
+  const headers: Record<string, string> = {
     'Content-Type': 'application/json',
   }
-  let body: Record<string, unknown> = {
+  const body: Record<string, unknown> = {
     model: 'meta-llama/llama-3.2-3b-instruct:free',
     messages,
     max_tokens: 500,
@@ -125,8 +126,9 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({ error: 'Message cannot be empty' }, { status: 400 })
     }
 
-    const hasApiKey = (process.env.OPENROUTER_API_KEY && process.env.OPENROUTER_API_KEY !== 'your-openai-api-key') ||
-                     (process.env.OPENAI_API_KEY && process.env.OPENAI_API_KEY !== 'demo-key' && process.env.OPENAI_API_KEY !== 'your-openai-api-key')
+    const hasApiKey =
+      (process.env.OPENROUTER_API_KEY && process.env.OPENROUTER_API_KEY !== 'your-openai-api-key') ||
+      (process.env.OPENAI_API_KEY && process.env.OPENAI_API_KEY !== 'demo-key' && process.env.OPENAI_API_KEY !== 'your-openai-api-key')
 
     if (hasApiKey) {
       const messages: { role: 'system' | 'user' | 'assistant'; content: string }[] = [
@@ -140,11 +142,11 @@ export async function POST(request: NextRequest) {
 
       const response = await chatWithOpenRouter(messages)
       return NextResponse.json({ response })
-    } else {
-      await new Promise(resolve => setTimeout(resolve, 300))
-      const response = getSmartFallback(cleanMessage)
-      return NextResponse.json({ response })
     }
+
+    await new Promise((resolve) => setTimeout(resolve, 250))
+    const response = getSmartFallback(cleanMessage)
+    return NextResponse.json({ response })
   } catch (error) {
     console.error('Chat API error:', error)
     const response = getSmartFallback('')

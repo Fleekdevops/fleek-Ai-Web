@@ -64,7 +64,7 @@ export default function AdminDashboard() {
   const [chatInput, setChatInput] = useState('')
   const [apiKey, setApiKey] = useState('')
   const [systemPrompt, setSystemPrompt] = useState(
-    'You are Freezer, an AI assistant created by Fleek AI. Always be helpful and promote our services.'
+    'You are the Fleektech assistant. Be helpful, professional, and guide users to the right IT solution.'
   )
 
   useEffect(() => {
@@ -140,7 +140,7 @@ export default function AdminDashboard() {
       <div className="max-w-7xl mx-auto">
         <div className="mb-8 animate-fade-in flex items-center justify-between">
           <div>
-            <h1 className="text-3xl font-black gradient-text mb-2">Fleek AI Admin</h1>
+            <h1 className="text-3xl font-black gradient-text mb-2">Fleektech Admin</h1>
             <p className="text-gray">Manage your AI platform from one dashboard</p>
           </div>
           <div className="flex items-center gap-3">
@@ -372,7 +372,7 @@ export default function AdminDashboard() {
 
             {activeTab === 'chatbot' && (
               <div className="space-y-6 animate-fade-in">
-                <h2 className="text-2xl font-bold">Freezer AI Configuration</h2>
+                <h2 className="text-2xl font-bold">Fleektech Assistant Configuration</h2>
 
                 <div className="grid lg:grid-cols-2 gap-6">
                   <div className="card-bg rounded-2xl p-6">
@@ -461,7 +461,7 @@ export default function AdminDashboard() {
                     <label className="block text-sm font-semibold mb-2">Site Title</label>
                     <input
                       type="text"
-                      defaultValue="Fleek AI | AI-Powered Technology Solutions"
+                      defaultValue="Fleektech | IT Solutions, Websites, Apps & Software in Nairobi"
                       className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 focus:border-primary outline-none"
                     />
                   </div>

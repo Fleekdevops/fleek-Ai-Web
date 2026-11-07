@@ -5,7 +5,7 @@ import { Send, Bot, Loader2, Copy, Check } from 'lucide-react'
 
 export default function ChatTool() {
   const [messages, setMessages] = useState<{role: string; content: string}[]>([
-    { role: 'assistant', content: 'Hi! I\'m an AI assistant. Ask me anything about AI, technology, or how Fleek AI can help your business!' }
+    { role: 'assistant', content: 'Hi! I\'m the Fleektech Assistant. Ask about websites, apps, custom software, portals, IT support, pricing, or our Nairobi office.' }
   ])
   const [input, setInput] = useState('')
   const [isLoading, setIsLoading] = useState(false)
@@ -47,8 +47,8 @@ export default function ChatTool() {
           <Bot className="w-5 h-5 text-white" />
         </div>
         <div>
-          <h3 className="font-bold">AI Chat Assistant</h3>
-          <p className="text-xs text-gray">Powered by Fleek AI</p>
+          <h3 className="font-bold">Fleektech Assistant</h3>
+          <p className="text-xs text-gray">Powered by Fleektech</p>
         </div>
       </div>
 

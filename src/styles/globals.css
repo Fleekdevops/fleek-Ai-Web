@@ -186,6 +186,39 @@ body {
   .text-balance {
     text-wrap: balance;
   }
+
+  .container {
+    width: 100%;
+    max-width: 1440px;
+    margin-inline: auto;
+    padding-inline: 32px;
+  }
+
+  @media (min-width: 1920px) {
+    .container {
+      max-width: 1600px;
+      padding-inline: 48px;
+    }
+  }
+
+  @media (min-width: 2560px) {
+    .container {
+      max-width: 1800px;
+      padding-inline: 64px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .container {
+      padding-inline: 20px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .container {
+      padding-inline: 16px;
+    }
+  }
 }
 
 /* Custom Scrollbar */
@@ -307,10 +340,35 @@ img {
 }
 
 @keyframes slide-horizontal-end-to-end {
-  0% { transform: translateX(100%); }
-  100% { transform: translateX(-100%); }
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
 }
 
 .animate-slide-horizontal-end-to-end {
-  animation: slide-horizontal-end-to-end 6s ease-in-out infinite alternate;
+  animation: slide-horizontal-end-to-end 24s linear infinite;
+}
+
+@keyframes paybill-marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.paybill-marquee-track,
+.animate-paybill-marquee {
+  animation: paybill-marquee 28s linear infinite;
+  will-change: transform;
+}
+
+.paybill-marquee-track:hover,
+.animate-paybill-marquee:hover {
+  animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .paybill-marquee-track,
+  .animate-paybill-marquee,
+  .animate-slide-horizontal,
+  .animate-slide-horizontal-end-to-end {
+    animation: none;
+  }
 }

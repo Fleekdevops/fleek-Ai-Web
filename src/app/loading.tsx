@@ -8,7 +8,7 @@ export default function Loading() {
           <span className="text-4xl">🤖</span>
         </div>
         <div className="space-y-2 animate-fade-in">
-          <h2 className="text-2xl font-bold gradient-text">Loading Fleek AI</h2>
+          <h2 className="text-2xl font-bold gradient-text">Loading Fleektech</h2>
           <div className="flex items-center justify-center gap-1">
             <span className="text-gray animate-pulse">Initializing AI systems</span>
             <span className="text-gray animate-pulse delay-100">.</span>

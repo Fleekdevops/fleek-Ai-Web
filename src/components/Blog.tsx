@@ -6,45 +6,45 @@ import { ArrowRight, Clock, User } from 'lucide-react'
 
 const blogPosts = [
   {
-    title: 'How AI Chatbots Are Revolutionizing Customer Support in 2025',
-    excerpt: 'Discover how AI chatbots are transforming customer support and reducing costs by up to 70%.',
-    category: 'AI Technology',
-    date: 'Dec 17, 2025',
-    author: 'Fleek AI Team',
-    image: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?w=600&q=80',
-    slug: 'ai-chatbots-revolutionizing-customer-support',
+    title: 'Why Every Nairobi Business Needs a Professional Website',
+    excerpt: 'A clear, credible website helps customers trust your business, find your services, and contact you quickly.',
+    category: 'Web Development',
+    date: 'Jan 15, 2025',
+    author: 'Nelson Maina',
+    image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&q=80',
+    slug: 'professional-website-nairobi-business',
   },
   {
-    title: 'Getting Started with Machine Learning: A Business Guide',
-    excerpt: 'A practical guide to implementing machine learning in your business operations.',
-    category: 'Machine Learning',
-    date: 'Oct 20, 2025',
-    author: 'Fleek AI Team',
+    title: 'Custom Software vs Off-the-Shelf Tools: What Fits Your Business?',
+    excerpt: 'Learn when a tailored system can save time, reduce manual work, and support your unique workflow.',
+    category: 'Custom Software',
+    date: 'Jan 10, 2025',
+    author: 'Carlos Koilai',
     image: 'https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=600&q=80',
-    slug: 'getting-started-machine-learning',
+    slug: 'custom-software-vs-off-the-shelf',
   },
   {
-    title: 'Process Automation: The Key to Scaling Your Business',
-    excerpt: 'Learn how to scale your business operations through strategic automation.',
-    category: 'Automation',
-    date: 'Oct 15, 2025',
-    author: 'Fleek AI Team',
-    image: 'https://images.unsplash.com/photo-1518432031352-d6fc5c10da5a?w=600&q=80',
-    slug: 'process-automation-scaling-business',
+    title: 'The Value of IT Support and Maintenance After Launch',
+    excerpt: 'Ongoing support keeps your website, app, or system secure, updated, and reliable as your business grows.',
+    category: 'IT Support',
+    date: 'Jan 5, 2025',
+    author: 'James Odhiambo',
+    image: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=600&q=80',
+    slug: 'it-support-and-maintenance-value',
   },
 ]
 
 export default function Blog() {
   return (
-    <section id="blog" className="py-24 relative">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="blog" className="py-24 relative w-full">
+      <div className="container">
         <div className="text-center mb-16 animate-fade-in">
-          <span className="text-primary font-semibold text-sm uppercase tracking-wider">News & Insights</span>
+          <span className="text-primary font-semibold text-sm uppercase tracking-wider">Insights</span>
           <h2 className="text-4xl sm:text-5xl font-black mt-3 mb-4">
-            Latest from Our <span className="gradient-text">Blog</span>
+            Practical <span className="gradient-text">Tech Insights</span>
           </h2>
           <p className="text-gray text-lg max-w-2xl mx-auto">
-            Stay updated with the latest trends, insights, and best practices in AI technology.
+            Helpful articles on websites, apps, software, and IT support for growing businesses.
           </p>
         </div>
 

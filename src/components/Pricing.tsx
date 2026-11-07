@@ -1,51 +1,48 @@
 'use client'
 
-import { useState } from 'react'
 import Link from 'next/link'
-import { Bot, Sparkles, ArrowRight, Check } from 'lucide-react'
+import { ArrowRight, Check } from 'lucide-react'
 
 const plans = [
   {
-    name: 'Starter',
-    price: '$1,500',
-    description: 'Perfect for small businesses getting started with AI',
+    name: 'Starter Website',
+    price: 'KES 18,000',
+    description: 'Best for small businesses that need a professional online presence',
     features: [
-      '1 AI Chatbot',
-      '1,000 AI Conversations/month',
-      'Basic Analytics',
-      'Email Support',
-      '3rd Party Integrations',
+      'Modern responsive website',
+      'Mobile-friendly design',
+      'Basic SEO setup',
+      'Contact/WhatsApp integration',
+      'Fast turnaround',
+      'Post-launch support',
     ],
     popular: false,
   },
   {
-    name: 'Professional',
-    price: '$4,999',
-    description: 'For growing businesses that need more power',
+    name: 'Business Package',
+    price: 'KES 35,000',
+    description: 'Ideal for growing businesses that need more features and flexibility',
     features: [
-      '3 AI Chatbots',
-      '10,000 AI Conversations/month',
-      'Advanced Analytics',
-      'Priority Support',
-      'Custom Training',
-      'CRM/ERP Integration',
-      'API Access',
+      'Everything in Starter',
+      'More pages/sections',
+      'Lead capture & forms',
+      'Performance optimization',
+      'Content guidance',
+      'Priority support',
     ],
     popular: true,
   },
   {
-    name: 'Enterprise',
-    price: 'Custom',
-    description: 'Tailored solutions for large organizations',
+    name: 'Custom App / Software',
+    price: 'Custom Quote',
+    description: 'For portals, apps, software systems, and fully custom requirements',
     features: [
-      'Unlimited AI Chatbots',
-      'Unlimited Conversations',
-      'Custom ML Models',
-      'Dedicated Account Manager',
-      '24/7 Phone Support',
-      'On-premise Deployment',
-      'Custom Integrations',
-      'SLA Guarantee',
+      'Custom websites, apps, software & portals',
+      'Tailored features and integrations',
+      'Scalable architecture',
+      'IT support & maintenance options',
+      'Affordable pricing for custom work',
+      'Delivered on time—no matter the challenge',
     ],
     popular: false,
   },
@@ -53,15 +50,15 @@ const plans = [
 
 export default function Pricing() {
   return (
-    <section id="pricing" className="py-24 relative">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="pricing" className="py-24 relative w-full">
+      <div className="container">
         <div className="text-center mb-16 animate-fade-in">
           <span className="text-primary font-semibold text-sm uppercase tracking-wider">Pricing</span>
           <h2 className="text-4xl sm:text-5xl lg:text-6xl font-black mt-3 mb-4">
-            Simple, <span className="gradient-text">Transparent</span> Pricing
+            Affordable <span className="gradient-text">Pricing</span>
           </h2>
           <p className="text-gray text-lg max-w-2xl mx-auto">
-            Choose the plan that fits your needs. All plans include our core AI features.
+            Clear starting packages for common needs, plus custom quotes for apps, software, portals, and IT support—at a lower price without compromising quality.
           </p>
         </div>
 
@@ -83,8 +80,8 @@ export default function Pricing() {
               <div className="text-center mb-6">
                 <h3 className="text-2xl font-bold mb-2">{plan.name}</h3>
                 <div className="text-4xl font-black gradient-text mb-2">{plan.price}</div>
-                {plan.price !== 'Custom' && (
-                  <div className="text-gray text-sm">one-time setup</div>
+                {plan.price !== 'Custom Quote' && (
+                  <div className="text-gray text-sm">starting price</div>
                 )}
                 <p className="text-gray mt-4">{plan.description}</p>
               </div>
@@ -101,24 +98,22 @@ export default function Pricing() {
               <Link
                 href="#contact"
                 className={`w-full py-4 rounded-xl font-bold text-center block transition-all ${
-                  plan.popular
-                    ? 'btn-primary'
-                    : 'btn-secondary'
+                  plan.popular ? 'btn-primary' : 'btn-secondary'
                 }`}
               >
-                Get Started
+                {plan.price === 'Custom Quote' ? 'Request Custom Quote' : 'Get Started'}
               </Link>
             </div>
           ))}
         </div>
 
         <div className="mt-16 text-center">
-          <p className="text-gray mb-4">Need a custom solution?</p>
+          <p className="text-gray mb-4">Need IT support, maintenance, or a highly custom solution?</p>
           <Link
             href="#contact"
             className="inline-flex items-center gap-2 text-primary font-bold hover:underline"
           >
-            Contact us for custom pricing
+            Talk to Fleektech
             <ArrowRight size={18} />
           </Link>
         </div>

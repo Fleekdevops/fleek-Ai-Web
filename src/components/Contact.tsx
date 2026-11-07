@@ -5,23 +5,22 @@ import { MapPin, Phone, Mail, Clock, Send, CheckCircle } from 'lucide-react'
 import toast from 'react-hot-toast'
 
 const services = [
-  'AI Chatbot Development',
-  'Machine Learning Solutions',
-  'Process Automation',
-  'AI Analytics & Insights',
-  'Generative AI Content',
-  'AI Data Processing',
-  'AI Security Solutions',
-  'Computer Vision',
-  'Custom AI Development',
+  'Website Design & Development',
+  'Mobile App Development',
+  'Custom Software Development',
+  'Business Portal / Web Application',
+  'IT Support & Maintenance',
+  'System Upgrade or Redesign',
+  'E-commerce Solution',
+  'Technical Consultation',
 ]
 
 const budgetRanges = [
-  'Under $5,000',
-  '$5,000 - $15,000',
-  '$15,000 - $50,000',
-  '$50,000 - $100,000',
-  '$100,000+',
+  'KES 18,000 - 35,000',
+  'KES 35,000 - 65,000',
+  'KES 65,000 - 150,000',
+  'KES 150,000+',
+  'Custom / Not sure yet',
 ]
 
 const timelines = [
@@ -85,19 +84,19 @@ export default function Contact() {
     }
   }
 
-  return (
-    <section id="contact" className="py-24 relative">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+return (
+    <section id="contact" className="py-24 relative w-full">
+      <div className="container">
         <div
           className="text-center mb-16 animate-fade-in"
         >
           <span className="text-primary font-semibold text-sm uppercase tracking-wider">Get In Touch</span>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black mt-3 mb-4">
-            Schedule an <span className="gradient-text">AI Consultation</span>
+            Let&apos;s Build Your <span className="gradient-text">Project</span>
           </h2>
-            <p className="text-gray text-lg max-w-2xl mx-auto">
-              Let&#39;s discuss how AI can transform your business. Our experts are ready to help you build intelligent solutions.
-            </p>
+          <p className="text-gray text-lg max-w-2xl mx-auto">
+            Tell us what you need—website, app, software, portal, or IT support. We&apos;ll recommend an affordable, custom solution and get back to you quickly.
+          </p>
         </div>
 
         <div className="grid lg:grid-cols-2 gap-12">
@@ -143,18 +142,18 @@ export default function Contact() {
                 </div>
                 <div>
                   <label className="block text-sm font-semibold mb-2">Phone Number</label>
-                  <input
-                    type="tel"
-                    value={formData.phone}
-                    onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                    className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-colors"
-                    placeholder="+254 XXX XXX XXX"
-                  />
+                    <input
+                      type="tel"
+                      value={formData.phone}
+                      onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                      className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-colors"
+                      placeholder="+254 758 175 057"
+                    />
                 </div>
               </div>
 
               <div>
-                <label className="block text-sm font-semibold mb-2">Service of Interest *</label>
+                <label className="block text-sm font-semibold mb-2">Service Needed *</label>
                 <select
                   required
                   value={formData.service}
@@ -204,7 +203,7 @@ export default function Contact() {
                   value={formData.message}
                   onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                   className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-colors resize-none"
-                  placeholder="Tell us about your AI project..."
+                  placeholder="Tell us about your website, app, software, portal, or support needs..."
                 />
               </div>
 
@@ -231,7 +230,7 @@ export default function Contact() {
                 ) : (
                   <>
                     <Send size={20} />
-                    Submit Request
+                    Submit Inquiry
                   </>
                 )}
               </button>
@@ -242,16 +241,18 @@ export default function Contact() {
             className="space-y-8 animate-slide-in-right"
           >
             <div className="card-bg rounded-3xl p-8">
-              <h3 className="text-xl font-bold mb-6">Contact Information</h3>
-              
+              <h3 className="text-xl font-bold mb-6">Visit Our Office</h3>
               <div className="space-y-6">
                 <div className="flex items-start gap-4">
                   <div className="w-12 h-12 rounded-xl gradient-bg flex items-center justify-center shrink-0">
                     <MapPin className="w-6 h-6 text-white" />
                   </div>
                   <div>
-                    <div className="font-semibold mb-1">Address</div>
-                    <div className="text-gray">Nairobi, Kenya</div>
+                    <div className="font-semibold mb-1">Office Location</div>
+                    <div className="text-gray">
+                      Moi Avenue, Stanbank Building, 3rd Floor, Room 10<br />
+                      Nairobi, Kenya
+                    </div>
                   </div>
                 </div>
 
@@ -274,13 +275,13 @@ export default function Contact() {
                   <div>
                     <div className="font-semibold mb-1">Email</div>
                     <div className="space-y-2">
-                      <a href="mailto:FleekTechInc@proton.me" className="text-gray hover:text-primary transition-colors">
+                      <a href="mailto:fleektechinc@gmail.com" className="block text-gray hover:text-primary transition-colors">
+                        fleektechinc@gmail.com
+                      </a>
+                      <a href="mailto:FleekTechInc@proton.me" className="block text-gray hover:text-primary transition-colors">
                         FleekTechInc@proton.me
                       </a>
-                      <a href="mailto:Fleektechinc@gmail.com" className="text-gray hover:text-primary transition-colors">
-                        Fleektechinc@gmail.com
-                      </a>
-                      <a href="mailto:Fleektechinc@outlook.com" className="text-gray hover:text-primary transition-colors">
+                      <a href="mailto:Fleektechinc@outlook.com" className="block text-gray hover:text-primary transition-colors">
                         Fleektechinc@outlook.com
                       </a>
                     </div>
@@ -294,8 +295,8 @@ export default function Contact() {
                   <div>
                     <div className="font-semibold mb-1">Working Hours</div>
                     <div className="text-gray">
-                      Mon-Fri: 8AM - 6PM<br />
-                      Sat: 9AM - 1PM
+                      Mon-Fri: 8:00 AM - 5:00 PM<br />
+                      Sat: 9:00 AM - 1:00 PM
                     </div>
                   </div>
                 </div>
@@ -303,13 +304,15 @@ export default function Contact() {
             </div>
 
             <div className="card-bg rounded-3xl p-8">
-              <h3 className="text-xl font-bold mb-6">Quick Response Promise</h3>
+              <h3 className="text-xl font-bold mb-6">Our Promise</h3>
               <div className="space-y-4">
                 {[
-                  'Initial consultation within 24 hours',
-                  'Detailed project proposal within 48 hours',
-                  'Transparent pricing with no hidden costs',
-                  'Dedicated AI expert assigned to your project',
+                  'Fast response and clear project guidance',
+                  'Affordable pricing for custom projects',
+                  'Time-efficient delivery with quality focus',
+                  'Websites, apps, software, portals & IT support',
+                  'Practical solutions built around your needs',
+                  'Reliable maintenance and post-launch support',
                 ].map((item, index) => (
                   <div key={index} className="flex items-center gap-3">
                     <CheckCircle className="w-5 h-5 text-accent shrink-0" />

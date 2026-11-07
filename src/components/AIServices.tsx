@@ -1,139 +1,123 @@
 'use client'
 
 import { 
-  Bot, Brain, Workflow, BarChart3, Wand2, Database,
-  Shield, Eye, Cpu, ArrowRight
+  Globe, Smartphone, Code2, LayoutDashboard, Wrench, Headphones,
+  ArrowRight, CheckCircle2
 } from 'lucide-react'
 import Link from 'next/link'
 
-const aiServices = [
+const services = [
   {
-    icon: Bot,
-    title: 'AI Chatbot Development',
-    description: 'Custom conversational AI chatbots for customer support, sales automation, and lead generation.',
-    features: ['Multi-platform Deployment', 'Natural Language Processing', 'CRM Integration', 'Custom Training'],
-    price: 'From $2,000',
+    icon: Globe,
+    title: 'Website Design & Development',
+    description: 'Professional, fast, and mobile-friendly websites that help your business stand out and convert visitors into customers.',
+    features: ['Business Websites', 'Landing Pages', 'E-commerce', 'SEO-Ready Builds'],
+    price: 'From KES 18,000',
     color: 'from-blue-500 to-cyan-500',
   },
   {
-    icon: Brain,
-    title: 'Machine Learning Solutions',
-    description: 'Build and deploy custom ML models for prediction, classification, and optimization.',
-    features: ['Predictive Analytics', 'Image Recognition', 'NLP Solutions', 'Recommendation Engines'],
-    price: 'From $5,000',
-    color: 'from-purple-500 to-pink-500',
-  },
-  {
-    icon: Workflow,
-    title: 'Process Automation',
-    description: 'Automate repetitive tasks and workflows using AI. Reduce costs and increase efficiency.',
-    features: ['Document Processing', 'Data Entry Automation', 'Email Management', 'Report Generation'],
-    price: 'From $3,000',
+    icon: Smartphone,
+    title: 'Mobile App Development',
+    description: 'Custom Android and iOS apps designed for performance, usability, and real business needs.',
+    features: ['Android & iOS Apps', 'Business Apps', 'Customer Portals', 'App Support'],
+    price: 'Affordable custom pricing',
     color: 'from-orange-500 to-amber-500',
   },
   {
-    icon: BarChart3,
-    title: 'AI Analytics & Insights',
-    description: 'Transform data into actionable insights with AI-powered dashboards and real-time reporting.',
-    features: ['Real-time Dashboards', 'Trend Analysis', 'Custom Reports', 'API Integration'],
-    price: 'From $2,500',
+    icon: Code2,
+    title: 'Custom Software Development',
+    description: 'Tailor-made software solutions that automate workflows and solve your unique operational challenges.',
+    features: ['Business Systems', 'Automation Tools', 'Integrations', 'Custom Features'],
+    price: 'No matter how custom',
+    color: 'from-purple-500 to-pink-500',
+  },
+  {
+    icon: LayoutDashboard,
+    title: 'Business Portals & Web Apps',
+    description: 'Secure portals and web applications for customers, staff, schools, and organizations.',
+    features: ['Client Portals', 'Admin Dashboards', 'Management Systems', 'Role-Based Access'],
+    price: 'Lower price, high value',
     color: 'from-green-500 to-emerald-500',
   },
   {
-    icon: Wand2,
-    title: 'Generative AI Content',
-    description: 'Create content at scale with AI. From marketing copy to product descriptions.',
-    features: ['Article Writing', 'Image Generation', 'Video Creation', 'Social Media'],
-    price: 'From $1,500',
-    color: 'from-rose-500 to-red-500',
-  },
-  {
-    icon: Database,
-    title: 'AI Data Processing',
-    description: 'Clean, structure, and analyze your data with AI. Turn messy data into business intelligence.',
-    features: ['Data Cleaning', 'ETL Pipelines', 'Quality Assurance', 'Cloud Storage'],
-    price: 'From $2,000',
+    icon: Headphones,
+    title: 'IT Support & Maintenance',
+    description: 'Reliable technical support to keep your systems, websites, and apps running smoothly.',
+    features: ['Troubleshooting', 'Updates & Fixes', 'Performance Checks', 'Ongoing Support'],
+    price: 'Flexible support plans',
     color: 'from-indigo-500 to-violet-500',
   },
   {
-    icon: Shield,
-    title: 'AI Security Solutions',
-    description: 'Protect your business with AI-powered threat detection and fraud prevention.',
-    features: ['Threat Detection', 'Fraud Prevention', 'Access Control', 'Compliance'],
-    price: 'From $4,000',
-    color: 'from-red-500 to-orange-500',
-  },
-  {
-    icon: Eye,
-    title: 'Computer Vision',
-    description: 'Deploy AI vision systems for quality control, object detection, and facial recognition.',
-    features: ['Quality Inspection', 'Object Detection', 'Facial Recognition', 'Medical Imaging'],
-    price: 'From $6,000',
+    icon: Wrench,
+    title: 'System Upgrades & Improvements',
+    description: 'Improve existing websites, software, and portals with modern features, better speed, and stronger reliability.',
+    features: ['Feature Enhancements', 'Bug Fixes', 'Redesigns', 'Optimization'],
+    price: 'Cost-effective upgrades',
     color: 'from-teal-500 to-cyan-500',
-  },
-  {
-    icon: Cpu,
-    title: 'Custom AI Development',
-    description: 'Full-stack AI solutions built from scratch. From concept to deployment.',
-    features: ['Custom Models', 'API Development', 'Cloud Deployment', 'Ongoing Support'],
-    price: 'Custom',
-    color: 'from-yellow-500 to-green-500',
   },
 ]
 
 export default function AIServices() {
   return (
-    <section id="services" className="py-24 relative bg-darker/50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="services" className="py-24 relative bg-darker/50 w-full">
+      <div className="container">
         <div className="text-center mb-16 animate-fade-in">
           <span className="text-primary font-semibold text-sm uppercase tracking-wider">Our Services</span>
           <h2 className="text-4xl sm:text-5xl lg:text-6xl font-black mt-3 mb-4">
-            High-Performance <span className="gradient-text">AI Architecture</span>
+            Complete <span className="gradient-text">IT Solutions</span>
           </h2>
-          <p className="text-gray text-lg max-w-2xl mx-auto">
-            We engineer AI solutions that are fast, secure, and built to transform your business operations.
+          <p className="text-gray text-lg max-w-3xl mx-auto">
+            Fleektech builds websites, apps, software, and portals—and provides dependable IT support and maintenance. We deliver affordable, custom solutions with a skilled team that gets it done on time.
           </p>
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {aiServices.map((service, index) => (
+          {services.map((service, index) => (
             <div
               key={service.title}
-              className="group card-bg rounded-3xl p-8 hover:-translate-y-2 transition-all duration-300 animate-fade-in"
-              style={{ animationDelay: `${index * 0.1}s` }}
+              className="group card-bg rounded-3xl p-8 hover:-translate-y-2 transition-all duration-300 animate-fade-in border border-white/5 hover:border-primary/20"
+              style={{ animationDelay: `${index * 0.08}s` }}
             >
-              <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${service.color} flex items-center justify-center mb-6 group-hover:scale-110 transition-transform`}>
+              <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${service.color} flex items-center justify-center mb-6 group-hover:scale-110 transition-transform shadow-lg shadow-black/20`}>
                 <service.icon className="w-8 h-8 text-white" />
               </div>
 
               <h3 className="text-xl font-bold mb-3 group-hover:text-primary transition-colors">{service.title}</h3>
-              <p className="text-gray mb-6">{service.description}</p>
+              <p className="text-gray mb-6 leading-relaxed">{service.description}</p>
 
-              <ul className="space-y-2 mb-6">
+              <ul className="space-y-2.5 mb-6">
                 {service.features.map((feature) => (
-                  <li key={feature} className="flex items-center gap-2 text-sm text-gray">
-                    <span className="text-accent">✓</span>
+                  <li key={feature} className="flex items-center gap-2.5 text-sm text-gray">
+                    <CheckCircle2 size={16} className="text-accent shrink-0" />
                     {feature}
                   </li>
                 ))}
               </ul>
 
               <div className="flex items-center justify-between pt-4 border-t border-white/10">
-                <span className="text-sm text-gray">Starting at</span>
-                <span className="text-lg font-bold gradient-text">{service.price}</span>
+                <span className="text-sm text-gray">Pricing</span>
+                <span className="text-sm sm:text-base font-bold gradient-text text-right">{service.price}</span>
               </div>
             </div>
           ))}
         </div>
 
-        <div className="text-center mt-12">
-          <Link
-            href="#contact"
-            className="btn-primary px-8 py-4 rounded-full font-bold inline-flex items-center gap-2"
-          >
-            Get Custom AI Solution
-            <ArrowRight size={20} />
-          </Link>
+        <div className="mt-12 card-bg rounded-3xl p-6 sm:p-8 border border-primary/15 bg-gradient-to-r from-primary/5 to-secondary/5">
+          <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6">
+            <div>
+              <h3 className="text-2xl font-bold mb-2">Affordable Excellence for Any Custom Project</h3>
+              <p className="text-gray max-w-2xl">
+                Whether you need a simple website, a complex portal, or a fully custom app or software system, Fleektech delivers quality work at a lower price—without compromising reliability.
+              </p>
+            </div>
+            <Link
+              href="#contact"
+              className="btn-primary px-8 py-4 rounded-full font-bold inline-flex items-center gap-2 shrink-0"
+            >
+              Discuss Your Project
+              <ArrowRight size={20} />
+            </Link>
+          </div>
         </div>
       </div>
     </section>

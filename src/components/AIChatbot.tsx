@@ -1,7 +1,7 @@
 'use client'
 
 import { useEffect, useState, useRef } from 'react'
-import { X, Minimize2, Maximize2, Send, Bot, Sparkles, Loader2 } from 'lucide-react'
+import { X, Minimize2, Maximize2, Send, MessageSquare, Loader2 } from 'lucide-react'
 import toast from 'react-hot-toast'
 
 interface Message {
@@ -11,10 +11,10 @@ interface Message {
 }
 
 const quickActions = [
-  'Tell me about AI services',
-  'Build a chatbot for me',
-  'What is the pricing?',
-  'Schedule a consultation',
+  'Get a quote',
+  'Website or app help',
+  'IT support & maintenance',
+  'Contact Fleektech',
 ]
 
 export default function AIChatbot() {
@@ -24,7 +24,7 @@ export default function AIChatbot() {
   const [messages, setMessages] = useState<Message[]>([
     {
       role: 'assistant',
-      content: "Hello! I'm Freezer, your AI assistant by Fleek AI. How can I help you today?",
+      content: "Hi! I'm the Fleektech assistant. Tell me what you need—website, app, software, portal, or IT support—and I’ll help you get started.",
       timestamp: new Date(),
     },
   ])
@@ -74,7 +74,7 @@ export default function AIChatbot() {
           ...prev,
           {
             role: 'assistant',
-            content: "I'm sorry, I'm having trouble responding right now. Please try again or contact us directly at Fleektechinc@gmail.com",
+            content: "I'm having trouble responding right now. Please call +254 758 175 057 or email fleektechinc@gmail.com and we’ll assist you.",
             timestamp: new Date(),
           },
         ])
@@ -84,7 +84,7 @@ export default function AIChatbot() {
         ...prev,
         {
           role: 'assistant',
-          content: "I'm sorry, I'm having trouble connecting. Please try again later.",
+          content: "I couldn't connect right now. Please try again or contact Fleektech at +254 758 175 057 / fleektechinc@gmail.com.",
           timestamp: new Date(),
         },
       ])
@@ -115,10 +115,10 @@ export default function AIChatbot() {
             <div className="gradient-bg p-4 flex items-center justify-between">
               <div className="flex items-center gap-3">
                 <div className="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center">
-                  <Bot className="w-6 h-6 text-white" />
+                  <MessageSquare className="w-6 h-6 text-white" />
                 </div>
                 <div>
-                  <div className="font-bold text-white">Freezer AI</div>
+                  <div className="font-bold text-white">Fleektech Assistant</div>
                   <div className="text-xs text-white/70 flex items-center gap-1">
                     <span className="w-2 h-2 rounded-full bg-green-400" />
                     Online
@@ -163,7 +163,7 @@ export default function AIChatbot() {
                   <div className="flex justify-start">
                     <div className="bg-white/5 px-4 py-3 rounded-2xl rounded-bl-md flex items-center gap-2">
                       <Loader2 className="w-4 h-4 animate-spin text-primary" />
-                      <span className="text-gray text-sm">Freezer is thinking...</span>
+                      <span className="text-gray text-sm">Team is typing...</span>
                     </div>
                   </div>
                 )}
@@ -188,7 +188,7 @@ export default function AIChatbot() {
                     value={input}
                     onChange={(e) => setInput(e.target.value)}
                     onKeyPress={handleKeyPress}
-                    placeholder="Ask me anything about AI..."
+                    placeholder="Ask about websites, apps, software, or support..."
                     className="flex-1 px-4 py-2 rounded-full bg-white/5 border border-white/10 focus:border-primary outline-none text-sm"
                   />
                   <button
@@ -210,7 +210,7 @@ export default function AIChatbot() {
           isOpen ? 'hidden' : 'flex'
         }`}
       >
-        <Bot className="w-8 h-8 text-white" />
+        <MessageSquare className="w-8 h-8 text-white" />
       </button>
     </div>
   )

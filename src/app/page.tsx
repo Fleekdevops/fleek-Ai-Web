@@ -8,8 +8,8 @@ import WhatWeDo from '@/components/WhatWeDo'
 import About from '@/components/About'
 import AITools from '@/components/AITools'
 import Pricing from '@/components/Pricing'
-import CaseStudies from '@/components/CaseStudies'
 import SolutionsFinder from '@/components/SolutionsFinder'
+import CaseStudies from '@/components/CaseStudies'
 import Team from '@/components/Team'
 import Testimonials from '@/components/Testimonials'
 import Blog from '@/components/Blog'
@@ -39,8 +39,8 @@ export default function Home() {
         <About />
         <AITools />
         <Pricing />
-        <CaseStudies />
         <SolutionsFinder />
+        <CaseStudies />
         <Team />
         <Testimonials />
         <Blog />

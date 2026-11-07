@@ -34,7 +34,7 @@ export default function AdminLogin() {
             <Lock className="w-8 h-8 text-white" />
           </div>
           <h1 className="text-2xl font-bold gradient-text">Admin Login</h1>
-          <p className="text-gray text-sm mt-2">Access the Fleek AI dashboard</p>
+          <p className="text-gray text-sm mt-2">Access the Fleektech dashboard</p>
         </div>
 
         <form onSubmit={handleLogin} className="space-y-6">

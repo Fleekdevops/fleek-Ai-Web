@@ -3,20 +3,29 @@ import { Toaster } from 'react-hot-toast'
 import '@/styles/globals.css'
 
 export const metadata: Metadata = {
-  title: 'FleekTech AI Solutions | The Best AI Company in Africa',
-  description: 'FleekTech AI Solutions - The Best AI Company in Africa. Based in Nairobi, Kenya with the finest team of AI experts, research lab, and premium AI services. Custom chatbots, machine learning, automation.',
-  keywords: ['AI', 'Artificial Intelligence', 'Chatbots', 'Machine Learning', 'Automation', 'Kenya', 'Nairobi', 'Best AI Company Africa', 'FleekTech AI Solutions'],
-  authors: [{ name: 'FleekTech AI Solutions' }],
+  title: 'Fleektech | IT Solutions, Websites, Apps & Software in Nairobi',
+  description: 'Fleektech builds websites, mobile apps, custom software, portals, and provides IT support and maintenance. Based at Moi Avenue, Stanbank Building, 3rd Floor Room 10, Nairobi. Affordable, skilled, fast, and reliable.',
+  keywords: [
+    'Fleektech',
+    'IT support Nairobi',
+    'website development Nairobi',
+    'mobile app development Kenya',
+    'custom software Nairobi',
+    'business portals',
+    'IT maintenance and support',
+    'software company Nairobi',
+  ],
+  authors: [{ name: 'Fleektech' }],
   openGraph: {
-    title: 'FleekTech AI Solutions | The Best AI Company in Africa',
-    description: 'Transform your business with cutting-edge AI solutions from the best AI company in Africa. Based in Nairobi, Kenya.',
+    title: 'Fleektech | Your Complete IT Partner in Nairobi',
+    description: 'Websites, apps, software, portals, IT support and maintenance — affordable, custom solutions delivered on time.',
     type: 'website',
     locale: 'en_US',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'FleekTech AI Solutions | The Best AI Company in Africa',
-    description: 'Transform your business with cutting-edge AI solutions from the best AI company in Africa.',
+    title: 'Fleektech | IT Solutions in Nairobi',
+    description: 'Affordable websites, apps, software, portals, and IT support for businesses in Nairobi and beyond.',
   },
   icons: [
     { rel: 'apple-touch-icon', sizes: '180x180', url: '/apple-touch-icon.png' },
