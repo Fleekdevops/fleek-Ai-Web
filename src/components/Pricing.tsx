@@ -1,122 +1,95 @@
 'use client'
 
+import type { CSSProperties } from 'react'
 import Link from 'next/link'
-import { ArrowRight, Check } from 'lucide-react'
-
-const plans = [
-  {
-    name: 'Starter Website',
-    price: 'KES 18,000',
-    description: 'Best for small businesses that need a professional online presence',
-    features: [
-      'Modern responsive website',
-      'Mobile-friendly design',
-      'Basic SEO setup',
-      'Contact/WhatsApp integration',
-      'Fast turnaround',
-      'Post-launch support',
-    ],
-    popular: false,
-  },
-  {
-    name: 'Business Package',
-    price: 'KES 35,000',
-    description: 'Ideal for growing businesses that need more features and flexibility',
-    features: [
-      'Everything in Starter',
-      'More pages/sections',
-      'Lead capture & forms',
-      'Performance optimization',
-      'Content guidance',
-      'Priority support',
-    ],
-    popular: true,
-  },
-  {
-    name: 'Custom App / Software',
-    price: 'Custom Quote',
-    description: 'For portals, apps, software systems, and fully custom requirements',
-    features: [
-      'Custom websites, apps, software & portals',
-      'Tailored features and integrations',
-      'Scalable architecture',
-      'IT support & maintenance options',
-      'Affordable pricing for custom work',
-      'Delivered on time—no matter the challenge',
-    ],
-    popular: false,
-  },
-]
+import { ArrowRight, Check, Clock3, Layers, Sparkles } from 'lucide-react'
+import { motion } from 'framer-motion'
+import SectionHeading from '@/components/SectionHeading'
+import { pricingPlans, customServiceRanges } from '@/lib/pricing'
 
 export default function Pricing() {
   return (
     <section id="pricing" className="py-24 relative w-full">
       <div className="container">
-        <div className="text-center mb-16 animate-fade-in">
-          <span className="text-primary font-semibold text-sm uppercase tracking-wider">Pricing</span>
-          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-black mt-3 mb-4">
-            Affordable <span className="gradient-text">Pricing</span>
-          </h2>
-          <p className="text-gray text-lg max-w-2xl mx-auto">
-            Clear starting packages for common needs, plus custom quotes for apps, software, portals, and IT support—at a lower price without compromising quality.
-          </p>
-        </div>
+        <SectionHeading
+          eyebrow="Pricing"
+          words={['Pricing shaped by service and scope', 'Websites, apps, software priced differently', 'Time and customization set the range']}
+          lead="Every service has different delivery drivers. Websites are not priced like portals, mobile apps, custom software, or support—your quote reflects scope, timeline, and customization."
+        />
 
-        <div className="grid md:grid-cols-3 gap-8">
-          {plans.map((plan, index) => (
-            <div
-              key={plan.name}
-              className={`card-bg rounded-3xl p-8 relative animate-fade-in hover:-translate-y-2 transition-all duration-300 ${
-                plan.popular ? 'ring-2 ring-primary' : ''
-              }`}
-              style={{ animationDelay: `${index * 0.1}s` }}
+        <div className="grid lg:grid-cols-3 gap-7">
+          {pricingPlans.map((plan, index) => (
+            <motion.article
+              key={plan.key}
+              initial={{ opacity: 0, y: 28, scale: 0.985 }}
+              whileInView={{ opacity: 1, y: 0, scale: 1 }}
+              viewport={{ once: true, amount: 0.2 }}
+              transition={{ duration: 0.6, delay: index * 0.08, ease: [0.22, 1, 0.36, 1] }}
+              whileHover={{ y: -10 }}
+              className={`card-bg interactive-card motion-sheen rounded-[1.7rem] p-7 relative border ${plan.featured ? 'border-primary/35 shadow-glow lg:-translate-y-2' : 'border-white/8'}`}
             >
-              {plan.popular && (
-                <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 px-4 py-1 rounded-full gradient-bg text-white text-sm font-bold">
-                  Most Popular
+              {plan.featured && (
+                <div className="absolute -top-3 left-6 px-3 py-1 rounded-full bg-primary text-darker text-xs font-bold inline-flex items-center gap-1 animate-pulse-glow">
+                  <Sparkles size={12} /> Most requested
                 </div>
               )}
 
-              <div className="text-center mb-6">
-                <h3 className="text-2xl font-bold mb-2">{plan.name}</h3>
-                <div className="text-4xl font-black gradient-text mb-2">{plan.price}</div>
-                {plan.price !== 'Custom Quote' && (
-                  <div className="text-gray text-sm">starting price</div>
-                )}
-                <p className="text-gray mt-4">{plan.description}</p>
+              <h3 className="font-display text-2xl font-bold">{plan.name}</h3>
+              <div className="font-display text-3xl font-extrabold gradient-text mt-3">{plan.from}</div>
+              <div className="text-sm text-accent/90 mt-1 inline-flex items-center gap-1.5"><Clock3 size={14} />{plan.timeline}</div>
+              <p className="text-gray mt-4 leading-relaxed">{plan.description}</p>
+
+              <div className="mt-5 rounded-2xl bg-white/[0.03] border border-white/7 p-4">
+                <div className="text-sm font-semibold flex items-center gap-2 mb-2"><Layers size={15} className="text-primary" /> What changes the price</div>
+                <ul className="space-y-1.5">
+                  {plan.factors.map((f) => (
+                    <li key={f} className="text-sm text-gray">• {f}</li>
+                  ))}
+                </ul>
               </div>
 
-              <ul className="space-y-4 mb-8">
-                {plan.features.map((feature) => (
-                  <li key={feature} className="flex items-start gap-3">
-                    <Check className="w-5 h-5 text-accent shrink-0 mt-0.5" />
-                    <span className="text-gray">{feature}</span>
+              <ul className="space-y-3 mt-5 mb-7">
+                {plan.deliverables.map((feature) => (
+                  <li key={feature} className="flex items-start gap-2.5 text-sm">
+                    <Check className="w-4 h-4 text-secondary shrink-0 mt-0.5" />
+                    <span className="text-light/88">{feature}</span>
                   </li>
                 ))}
               </ul>
 
-              <Link
-                href="#contact"
-                className={`w-full py-4 rounded-xl font-bold text-center block transition-all ${
-                  plan.popular ? 'btn-primary' : 'btn-secondary'
-                }`}
-              >
-                {plan.price === 'Custom Quote' ? 'Request Custom Quote' : 'Get Started'}
+              <Link href="#contact" className={`w-full py-3.5 rounded-xl font-bold text-center block ${plan.featured ? 'btn-primary' : 'btn-secondary'}`}>
+                Request a scoped quote
               </Link>
-            </div>
+            </motion.article>
           ))}
         </div>
 
-        <div className="mt-16 text-center">
-          <p className="text-gray mb-4">Need IT support, maintenance, or a highly custom solution?</p>
-          <Link
-            href="#contact"
-            className="inline-flex items-center gap-2 text-primary font-bold hover:underline"
-          >
-            Talk to Fleektech
-            <ArrowRight size={18} />
+        <motion.div
+          initial={{ opacity: 0, y: 18 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="mt-8 grid sm:grid-cols-2 xl:grid-cols-4 gap-4"
+        >
+          {customServiceRanges.map((item, i) => (
+            <div key={item.name} className="card-bg interactive-card rounded-2xl p-5 border border-white/7" style={{ '--d': `${i * 0.05}s` } as CSSProperties}>
+              <div className="text-sm text-accent font-semibold">{item.range}</div>
+              <h3 className="font-display text-lg font-bold mt-1">{item.name}</h3>
+              <p className="text-sm text-gray mt-2 leading-relaxed">{item.note}</p>
+            </div>
+          ))}
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 18 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="mt-6 card-bg interactive-card rounded-2xl p-5 sm:p-6 border border-white/7 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4"
+        >
+          <p className="text-gray"><span className="text-light font-semibold">No copy-paste pricing.</span> A website, app, portal, custom software, and support plan are estimated using different scope, timeline, and customization factors.</p>
+          <Link href="#contact" className="inline-flex items-center gap-2 text-primary font-semibold hover:text-accent transition-colors shrink-0">
+            Get the right quote <ArrowRight size={17} />
           </Link>
-        </div>
+        </motion.div>
       </div>
     </section>
   )

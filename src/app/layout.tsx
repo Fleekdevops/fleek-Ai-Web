@@ -1,6 +1,20 @@
 import type { Metadata } from 'next'
+import { IBM_Plex_Sans, Sora } from 'next/font/google'
 import { Toaster } from 'react-hot-toast'
 import '@/styles/globals.css'
+
+const sora = Sora({
+  subsets: ['latin'],
+  variable: '--font-display',
+  display: 'swap',
+})
+
+const plex = IBM_Plex_Sans({
+  subsets: ['latin'],
+  weight: ['400', '500', '600', '700'],
+  variable: '--font-body',
+  display: 'swap',
+})
 
 export const metadata: Metadata = {
   title: 'Fleektech | IT Solutions, Websites, Apps & Software in Nairobi',
@@ -27,12 +41,17 @@ export const metadata: Metadata = {
     title: 'Fleektech | IT Solutions in Nairobi',
     description: 'Affordable websites, apps, software, portals, and IT support for businesses in Nairobi and beyond.',
   },
-  icons: [
-    { rel: 'apple-touch-icon', sizes: '180x180', url: '/apple-touch-icon.png' },
-    { rel: 'icon', type: 'image/png', sizes: '32x32', url: '/favicon-32x32.png' },
-    { rel: 'icon', type: 'image/png', sizes: '16x16', url: '/favicon-16x16.png' },
-    { rel: 'icon', url: '/favicon.svg' },
-  ],
+  icons: {
+    icon: [
+      { url: '/favicon.ico', sizes: 'any' },
+      { url: '/favicon-32x32.png', type: 'image/png', sizes: '32x32' },
+      { url: '/favicon-16x16.png', type: 'image/png', sizes: '16x16' },
+      { url: '/favicon.svg', type: 'image/svg+xml' },
+    ],
+    apple: [{ url: '/apple-touch-icon.png', sizes: '180x180', type: 'image/png' }],
+    shortcut: ['/favicon.ico'],
+  },
+  manifest: '/site.webmanifest',
 }
 
 export default function RootLayout({
@@ -41,16 +60,16 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className="scroll-smooth">
+    <html lang="en" className={`scroll-smooth ${sora.variable} ${plex.variable}`}>
       <body className="antialiased">
         {children}
-        <Toaster 
+        <Toaster
           position="bottom-right"
           toastOptions={{
             style: {
-              background: '#0a0a18',
-              color: '#f8f9ff',
-              border: '1px solid rgba(0, 102, 255, 0.2)',
+              background: '#101922',
+              color: '#EEF6FB',
+              border: '1px solid rgba(255, 122, 69, 0.28)',
             },
           }}
         />

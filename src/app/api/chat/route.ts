@@ -5,9 +5,15 @@ Fleektech builds websites, mobile apps, custom software, and business portals, a
 Office: Moi Avenue, Stanbank Building, 3rd Floor, Room 10, Nairobi, Kenya.
 Phone: +254 758 175 057.
 Emails: fleektechinc@gmail.com, FleekTechInc@proton.me, Fleektechinc@outlook.com.
-Key value propositions: affordable excellence, time efficiency, skilled team, client-first commitment, and custom solutions at lower prices no matter how custom the project is.
-Pricing guidance (starting points): websites from KES 18,000; business packages around KES 35,000–65,000; apps/software/portals/custom work quoted based on requirements.
-Be helpful, professional, concise, and guide users to request a quote or contact Fleektech when appropriate.`
+Key value propositions: clear scoping, practical recommendations, skilled delivery, client-first communication, and reliable support after launch.
+Pricing is service-specific and depends on timeline and customization (do NOT use one flat price across services):
+- Websites & landing pages: from KES 18,000 (scope by pages, content, forms, SEO, design).
+- Portals / business systems: from KES 55,000 (scope by roles, workflows, data, integrations).
+- Mobile apps: from KES 120,000 (scope by platform, features, APIs, release needs).
+- Custom software: from KES 85,000 (scope by workflow complexity, integrations, reporting).
+- IT support: from KES 4,500 per request or plan-based by urgency and environment.
+- Maintenance: from KES 8,000/month based on system size and care level.
+Always explain that final quotes depend on service type, timeline, and customization, then guide users to request a scoped quote.`
 
 interface Message {
   role: 'user' | 'assistant'
@@ -16,41 +22,55 @@ interface Message {
 
 const fallbackResponses = [
   {
-    keywords: ['price', 'cost', 'pricing', 'budget', 'how much', 'kes'],
-    response: "Fleektech offers affordable, custom pricing. Websites start from KES 18,000, business packages are commonly around KES 35,000–65,000, and apps/software/portals are quoted based on your requirements. Share your project details and we’ll give you a fair quote."
+    keywords: ['price', 'cost', 'pricing', 'budget', 'how much', 'kes', 'quote', 'estimate'],
+    response:
+      'Fleektech prices each service differently based on scope, timeline, and customization. Typical starting points: websites from KES 18,000; portals/business systems from KES 55,000; mobile apps from KES 120,000; custom software from KES 85,000; IT support from KES 4,500; maintenance from KES 8,000/month. Share the service, timeline, and what you need customized for a scoped quote.',
   },
   {
     keywords: ['website', 'web', 'site', 'landing'],
-    response: "We design and develop professional websites that are mobile-friendly, fast, and built to help your business get results. We can also handle updates and maintenance after launch."
+    response:
+      'We design and develop professional websites that are mobile-friendly, fast, and built to generate inquiries. Website pricing starts from KES 18,000 and changes with page count, content, forms, SEO, and design/custom features.',
   },
   {
     keywords: ['app', 'mobile', 'android', 'ios'],
-    response: "Fleektech builds custom mobile apps for Android and iOS. Tell us what the app should do, and we’ll recommend an affordable, practical solution."
+    response:
+      'Fleektech builds custom mobile apps for Android and iOS. Mobile app pricing starts from KES 120,000 and depends on platform(s), features, APIs/integrations, authentication, and timeline—not website pricing.',
   },
   {
-    keywords: ['software', 'system', 'portal', 'custom'],
-    response: "We build custom software and business portals tailored to your workflow—no matter how custom the project is. We focus on quality, efficiency, and lower pricing."
+    keywords: ['software', 'system', 'custom', 'automation'],
+    response:
+      'We build custom software tailored to your workflow. Custom software pricing starts from KES 85,000 and is scoped by process complexity, integrations, reporting, users, and delivery timeline.',
   },
   {
-    keywords: ['support', 'maintenance', 'fix', 'repair', 'update'],
-    response: "Yes—Fleektech provides IT support and maintenance, including troubleshooting, updates, fixes, performance checks, and ongoing improvements."
+    keywords: ['portal', 'dashboard', 'web app', 'admin'],
+    response:
+      'We build business portals and web apps with dashboards, roles, and workflows. Portal/system pricing starts from KES 55,000 and depends on user roles, data flows, integrations, and customization.',
+  },
+  {
+    keywords: ['support', 'maintenance', 'fix', 'repair', 'update', 'care'],
+    response:
+      'Yes—Fleektech provides IT support and maintenance. Support starts from KES 4,500 (request/plan) and maintenance from KES 8,000/month, depending on system size, urgency, response needs, and scope of care.',
   },
   {
     keywords: ['contact', 'email', 'phone', 'reach', 'talk', 'location', 'office', 'where'],
-    response: "You can reach Fleektech at +254 758 175 057 or email fleektechinc@gmail.com. Our office is at Moi Avenue, Stanbank Building, 3rd Floor, Room 10, Nairobi."
+    response:
+      'You can reach Fleektech at +254 758 175 057 or email fleektechinc@gmail.com / FleekTechInc@proton.me / Fleektechinc@outlook.com. Office: Moi Avenue, Stanbank Building, 3rd Floor, Room 10, Nairobi.',
   },
   {
     keywords: ['hello', 'hi', 'hey', 'greetings'],
-    response: "Hi! I’m the Fleektech assistant. I can help with websites, apps, custom software, portals, IT support, and maintenance. What would you like to build or fix?"
+    response:
+      'Hi! I’m the Fleektech assistant. I can help with websites, apps, custom software, portals, IT support, and maintenance. Which service and timeline are you considering?',
   },
   {
     keywords: ['help', 'what can you do', 'services'],
-    response: "Fleektech can help with:\n\n• Website Design & Development\n• Mobile Apps\n• Custom Software\n• Business Portals/Web Apps\n• IT Support & Maintenance\n• Upgrades and improvements\n\nWhat do you need?"
+    response:
+      'Fleektech can help with:\n\n• Website Design & Development\n• Mobile Apps\n• Custom Software\n• Portals & Business Systems\n• IT Support\n• Maintenance & Improvements\n\nTell me the service you need and how custom/time-sensitive it is for a relevant estimate.',
   },
   {
     keywords: ['thank', 'thanks', 'appreciate'],
-    response: "You're welcome! If you share your project details, I can help you figure out the best next step and a suitable quote range."
-  }
+    response:
+      "You're welcome! If you share the service, timeline, and customization level, I can help you narrow the right starting range.",
+  },
 ]
 
 function getSmartFallback(userMessage: string): string {
@@ -63,9 +83,9 @@ function getSmartFallback(userMessage: string): string {
   }
 
   const defaultResponses = [
-    "Fleektech can help with websites, apps, custom software, portals, IT support, and maintenance. Share a bit about your project and I’ll point you in the right direction.",
-    "We build affordable, custom IT solutions for businesses in Nairobi and beyond. Tell me what you need, and I’ll help you get a quote.",
-    "No matter how custom your project is, Fleektech can help you build it at a fair price. What are you looking to create or improve?",
+    'Fleektech can help with websites, apps, custom software, portals, IT support, and maintenance. Share the service, timeline, and customization level for a service-specific estimate.',
+    'We scope projects by service type, time, and customization—not one flat price for everything. Tell me what you want to build or improve.',
+    'If you share your goal, deadline, and how custom it needs to be, I can suggest the right Fleektech service and starting price range.',
   ]
 
   return defaultResponses[Math.floor(Math.random() * defaultResponses.length)]

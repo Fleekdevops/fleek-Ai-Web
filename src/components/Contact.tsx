@@ -3,6 +3,10 @@
 import { useState } from 'react'
 import { MapPin, Phone, Mail, Clock, Send, CheckCircle } from 'lucide-react'
 import toast from 'react-hot-toast'
+import { motion } from 'framer-motion'
+import SectionHeading from '@/components/SectionHeading'
+import Reveal from '@/components/motion/Reveal'
+import { contactBudgetRanges } from '@/lib/pricing'
 
 const services = [
   'Website Design & Development',
@@ -13,14 +17,6 @@ const services = [
   'System Upgrade or Redesign',
   'E-commerce Solution',
   'Technical Consultation',
-]
-
-const budgetRanges = [
-  'KES 18,000 - 35,000',
-  'KES 35,000 - 65,000',
-  'KES 65,000 - 150,000',
-  'KES 150,000+',
-  'Custom / Not sure yet',
 ]
 
 const timelines = [
@@ -84,26 +80,18 @@ export default function Contact() {
     }
   }
 
-return (
+  return (
     <section id="contact" className="py-24 relative w-full">
       <div className="container">
-        <div
-          className="text-center mb-16 animate-fade-in"
-        >
-          <span className="text-primary font-semibold text-sm uppercase tracking-wider">Get In Touch</span>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black mt-3 mb-4">
-            Let&apos;s Build Your <span className="gradient-text">Project</span>
-          </h2>
-          <p className="text-gray text-lg max-w-2xl mx-auto">
-            Tell us what you need—website, app, software, portal, or IT support. We&apos;ll recommend an affordable, custom solution and get back to you quickly.
-          </p>
-        </div>
+        <SectionHeading
+          eyebrow="Contact"
+          words={['Let’s scope the right solution', 'Tell us what you need built or fixed', 'Get a quote that matches the work']}
+          lead="Share the service, timeline, and level of customization. Fleektech prices websites, apps, software, portals, and support differently—so the quote fits the actual project."
+        />
 
         <div className="grid lg:grid-cols-2 gap-12">
-          <div
-            className="animate-slide-in-left"
-          >
-            <form onSubmit={handleSubmit} className="card-bg rounded-3xl p-8 space-y-6">
+          <Reveal>
+            <form onSubmit={handleSubmit} className="card-bg interactive-card rounded-[1.7rem] p-8 space-y-6 border border-white/8">
               <div className="grid sm:grid-cols-2 gap-6">
                 <div>
                   <label className="block text-sm font-semibold mb-2">Full Name *</label>
@@ -169,14 +157,14 @@ return (
 
               <div className="grid sm:grid-cols-2 gap-6">
                 <div>
-                  <label className="block text-sm font-semibold mb-2">Estimated Budget</label>
+                  <label className="block text-sm font-semibold mb-2">Estimated Budget Range</label>
                   <select
                     value={formData.budget}
                     onChange={(e) => setFormData({ ...formData, budget: e.target.value })}
                     className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-colors"
                   >
-                    <option value="">Select budget</option>
-                    {budgetRanges.map((range) => (
+                    <option value="">Select a service-specific range</option>
+                    {contactBudgetRanges.map((range) => (
                       <option key={range} value={range}>{range}</option>
                     ))}
                   </select>
@@ -223,7 +211,7 @@ return (
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full btn-primary py-4 rounded-xl font-bold flex items-center justify-center gap-2 disabled:opacity-50"
+                className="w-full btn-primary py-4 rounded-xl font-bold flex items-center justify-center gap-2 disabled:opacity-50 motion-sheen"
               >
                 {isSubmitting ? (
                   'Submitting...'
@@ -235,13 +223,11 @@ return (
                 )}
               </button>
             </form>
-          </div>
+          </Reveal>
 
-          <div
-            className="space-y-8 animate-slide-in-right"
-          >
-            <div className="card-bg rounded-3xl p-8">
-              <h3 className="text-xl font-bold mb-6">Visit Our Office</h3>
+          <Reveal delay={0.08} className="space-y-8">
+            <div className="card-bg interactive-card rounded-[1.7rem] p-8 border border-white/8">
+              <h3 className="font-display text-xl font-bold mb-6">Visit Our Office</h3>
               <div className="space-y-6">
                 <div className="flex items-start gap-4">
                   <div className="w-12 h-12 rounded-xl gradient-bg flex items-center justify-center shrink-0">
@@ -303,25 +289,25 @@ return (
               </div>
             </div>
 
-            <div className="card-bg rounded-3xl p-8">
-              <h3 className="text-xl font-bold mb-6">Our Promise</h3>
+            <div className="card-bg interactive-card rounded-[1.7rem] p-8 border border-white/8">
+              <h3 className="font-display text-xl font-bold mb-6">Our Promise</h3>
               <div className="space-y-4">
                 {[
                   'Fast response and clear project guidance',
-                  'Affordable pricing for custom projects',
+                  'Service-specific pricing for websites, apps, software, portals, and support',
                   'Time-efficient delivery with quality focus',
-                  'Websites, apps, software, portals & IT support',
-                  'Practical solutions built around your needs',
+                  'Custom solutions scoped by timeline and complexity',
+                  'Practical recommendations around your real needs',
                   'Reliable maintenance and post-launch support',
-                ].map((item, index) => (
-                  <div key={index} className="flex items-center gap-3">
-                    <CheckCircle className="w-5 h-5 text-accent shrink-0" />
+                ].map((item) => (
+                  <div key={item} className="flex items-center gap-3">
+                    <CheckCircle className="w-5 h-5 text-secondary shrink-0" />
                     <span className="text-gray">{item}</span>
                   </div>
                 ))}
               </div>
             </div>
-          </div>
+          </Reveal>
         </div>
       </div>
     </section>
